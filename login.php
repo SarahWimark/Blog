@@ -1,5 +1,5 @@
 <?php define('TITLE', 'Login'); ?>
-<?php include_once('header.php'); ?>
+<?php include_once('./src/includes/header.php'); ?>
 
 
 <main>
@@ -20,4 +20,4 @@
     </div>
 </main>
 
-<?php include_once('footer.php'); ?>
+<?php include_once('./src/includes/footer.php'); ?>

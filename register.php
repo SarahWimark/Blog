@@ -1,5 +1,5 @@
 <?php define('TITLE', 'Sign up'); ?>
-<?php include_once('header.php'); ?>
+<?php include_once('./src/includes/header.php'); ?>
 
 <main>
     <div class="container w-25 mt-5 shadow p-4">
@@ -19,4 +19,4 @@
     </div>
 </main>
 
-<?php include_once('footer.php'); ?>
+<?php include_once('./src/includes/footer.php'); ?>
