@@ -1,4 +1,40 @@
 #main-header {
   height: 80px;
   background-color: #cd5360;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+
+#main-header li {
+}
+
+.logo {
+  float: left;
+  margin-left: 2rem;
+  height: inherit;
+}
+
+.logo-title {
+  margin: 10px;
+}
+
+.navigation {
+  float: right;
+  border: 2px solid red;
+  list-style: none;
+}
+
+.navigation li {
+  float: left;
+}
+
+.navigation a {
+  display: block;
+  padding: 1.3rem;
+  text-decoration: none;
+}
+
+.sub-navigation {
+  list-style: none;
 }

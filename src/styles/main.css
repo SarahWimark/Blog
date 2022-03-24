@@ -1,6 +1,11 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
   background-color: #eae7dc;
   background: #eae7dc; /* fallback for old browsers */
   background: -webkit-linear-gradient(

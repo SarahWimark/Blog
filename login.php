@@ -3,7 +3,7 @@
 
 
 <main>
-    <div class="container w-25 mt-5 shadow p-4">
+    <div class="container w-25 mt-5 shadow p-4 bg-white rounded">
         <form action="index.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
