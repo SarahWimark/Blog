@@ -17,6 +17,9 @@
         <button type="submit" class="btn btn-success" name="submit">Login</button>
         </div>
     </form>
+    <div><a href="signup.php">Signup instead?</a></div>
+    <div><a href="#">Forgot password?</a></div>
+    
     </div>
 </main>
 
