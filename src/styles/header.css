@@ -18,7 +18,6 @@
 
 .navigation {
   float: right;
-  border: 2px solid red;
   list-style: none;
   position: relative;
 }
@@ -37,7 +36,6 @@
 
 .navigation a:hover {
   color: #d8c3a5;
-  background-color: #cd5360;
 }
 
 .sub-navigation {
@@ -46,7 +44,6 @@
   top: 80px;
   right: 0;
   width: 180px;
-  border: 2px solid red;
 }
 
 .sub-navigation li {
@@ -55,4 +52,8 @@
 
 .sub-navigation a {
   padding: 10px;
+}
+
+.fa-chevron-down {
+  font-size: 0.8rem;
 }

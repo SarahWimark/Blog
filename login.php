@@ -14,7 +14,8 @@
                 <input type="password" class="form-control" id="password" name="password">
             </div>
             <div class="mt-2">
-                <button type="submit" class="btn btn-success" name="submit">Login</button>
+                <button type="submit" class="btn btn-success" name="submit"><i class="fa fa-arrow-right-to-arc"></i>
+                    Login</button>
             </div>
         </form>
         <div><a href="signup.php">Signup instead?</a></div>
