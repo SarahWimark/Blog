@@ -4,9 +4,9 @@
   color: #eae7dc;
   font-family: "Lato", sans-serif;
   font-weight: bold;
-  -webkit-box-shadow: 0 4px 4px -2px #000000;
-  -moz-box-shadow: 0 4px 4px -2px #000000;
-  box-shadow: 0 2px 2px -1px #000000;
+  -webkit-box-shadow: 0 4px 4px -2px #444;
+  -moz-box-shadow: 0 4px 4px -2px #444;
+  box-shadow: 0 2px 2px -1px #444;
 }
 
 .logo {
@@ -36,7 +36,6 @@
 .navigation a {
   display: block;
   padding: 1.3rem;
-  text-decoration: none;
   cursor: pointer;
   color: #eae7dc;
 }
