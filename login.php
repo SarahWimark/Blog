@@ -15,7 +15,7 @@
             </div>
             <div class="mt-2">
                 <button type="submit" class="btn btn-success" name="submit">
-                    Login</button>
+                    <i class="fa fa-arrow-right-to-bracket"></i> Login</button>
             </div>
         </form>
         <div><a href="signup.php">Signup instead?</a></div>
