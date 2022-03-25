@@ -32,6 +32,15 @@ a {
   background: #e98074 !important;
 }
 
+.btn-outline-secondary {
+  color: #e98074 !important;
+  border-color: #e98074 !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #eae7dc;
+}
+
 .clearfix::after {
   content: "";
   display: block;
