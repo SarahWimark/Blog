@@ -1,0 +1,22 @@
+/* Carousel styling */
+
+.new-posts-carousel {
+  border: 2px solid red;
+}
+
+.new-posts-container {
+  border: 2px dashed red;
+  height: 350px;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.new-post {
+  background-color: blue;
+  width: 300px;
+  height: 350px;
+  margin: 0 10px;
+  border: 2px solid red;
+  display: inline-block;
+}
