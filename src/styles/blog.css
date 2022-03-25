@@ -4,7 +4,6 @@
   text-align: center;
   margin: 20px;
   color: #444;
-  font-weight: bold;
 }
 
 .new-posts-carousel {
@@ -74,11 +73,39 @@
   border: 2px solid red;
 }
 
+.new-bloggers-section-title {
+  margin: 20px;
+  color: #444;
+}
+
 .new-bloggers-section {
   width: 70%;
   float: right;
   border: 2px solid red;
   text-align: center;
+}
+
+.blog-card {
+  width: 95%;
+  height: 300px;
+  margin: 10px auto;
+  border-radius: 6px;
+  background: white;
+}
+
+.blog-card-title {
+  color: #e85a4f;
+}
+
+.blog-card-content {
+  padding: 10px;
+}
+
+.blog-card-img {
+  width: 40%;
+  height: 100%;
+  float: right;
+  background: white;
 }
 
 .sidebar {
