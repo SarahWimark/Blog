@@ -31,7 +31,7 @@
                 <img src="src/images/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
                     class="carousel-img">
                 <div class="post-info">
-                    <h4><a href="#">Blog post title</a></h4>
+                    <h4><a href="#">Another blog post title</a></h4>
                     <i class="far fa-user"> Blog post author</i> &nbsp;
                     <i class="far fa-calendar"> Mar 25, 2022</i>
                 </div>
@@ -40,7 +40,7 @@
                 <img src="src/images/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
                     class="carousel-img">
                 <div class="post-info">
-                    <h4><a href="#">Blog post title</a></h4>
+                    <h4><a href="#">A third blog post title</a></h4>
                     <i class="far fa-user"> Blog post author</i> &nbsp;
                     <i class="far fa-calendar"> Mar 25, 2022</i>
                 </div>
@@ -49,7 +49,7 @@
                 <img src="src/images/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
                     class="carousel-img">
                 <div class="post-info">
-                    <h4><a href="#">Blog post title</a></h4>
+                    <h4><a href="#">A fourth blog post title</a></h4>
                     <i class="far fa-user"> Blog post author</i> &nbsp;
                     <i class="far fa-calendar"> Mar 25, 2022</i>
                 </div>
@@ -58,7 +58,7 @@
                 <img src="src/images/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
                     class="carousel-img">
                 <div class="post-info">
-                    <h4><a href="#">Blog post title</a></h4>
+                    <h4><a href="#">A fifth blog post title</a></h4>
                     <i class="far fa-user"> Blog post author</i> &nbsp;
                     <i class="far fa-calendar"> Mar 25, 2022</i>
                 </div>

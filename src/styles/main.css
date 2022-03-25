@@ -27,3 +27,7 @@ body {
 a {
   text-decoration: none;
 }
+
+.bg-secondary {
+  background: #e98074 !important;
+}

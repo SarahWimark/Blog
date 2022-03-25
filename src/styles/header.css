@@ -54,15 +54,7 @@
   -webkit-box-shadow: 0 4px 4px -2px #444;
   -moz-box-shadow: 0 4px 4px -2px #444;
   box-shadow: 0 2px 2px -1px #444;
-}
-
-.subnavigation ul li:after {
-  content: "";
-  display: block;
-  height: 1px;
-  width: 40%;
-  margin: 10px;
-  background: #444;
+  z-index: 9999;
 }
 
 .sub-navigation li {
