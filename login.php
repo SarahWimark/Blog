@@ -14,7 +14,7 @@
                 <input type="password" class="form-control" id="password" name="password">
             </div>
             <div class="mt-2">
-                <button type="submit" class="btn btn-success" name="submit"><i class="fa fa-arrow-right-to-arc"></i>
+                <button type="submit" class="btn btn-success" name="submit">
                     Login</button>
             </div>
         </form>

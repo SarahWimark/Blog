@@ -29,8 +29,9 @@
                     <li><a href="signup.php">Sign up</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="#"><i class="fa fa-user"></i> Logged in user <i class="fa fa-chevron-down"></i></a>
-                        <ul class="sub-navigation">
-                            <li><a href="#">Dashboard</a></li>
+
+                        <ul class="sub-navigation bg-white">
+                            <li><a href="#" class="text-secondary">Dashboard</a></li>
                             <li><a href="#" class="text-danger">Logout</a></li>
                         </ul>
                     </li>

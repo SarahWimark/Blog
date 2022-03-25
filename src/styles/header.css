@@ -1,9 +1,12 @@
 #main-header {
-  height: 80px;
+  height: 70px;
   background-color: #cd5360;
   color: #eae7dc;
   font-family: "Lato", sans-serif;
   font-weight: bold;
+  -webkit-box-shadow: 0 4px 4px -2px #000000;
+  -moz-box-shadow: 0 4px 4px -2px #000000;
+  box-shadow: 0 2px 2px -1px #000000;
 }
 
 .logo {
@@ -26,6 +29,10 @@
   float: left;
 }
 
+.navigation li:hover ul {
+  display: block;
+}
+
 .navigation a {
   display: block;
   padding: 1.3rem;
@@ -41,9 +48,22 @@
 .sub-navigation {
   list-style: none;
   position: absolute;
-  top: 80px;
+  top: 70px;
   right: 0;
   width: 180px;
+  display: none;
+  -webkit-box-shadow: 0 4px 4px -2px #444;
+  -moz-box-shadow: 0 4px 4px -2px #444;
+  box-shadow: 0 2px 2px -1px #444;
+}
+
+.subnavigation ul li:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 40%;
+  margin: 10px;
+  background: #444;
 }
 
 .sub-navigation li {
@@ -52,6 +72,10 @@
 
 .sub-navigation a {
   padding: 10px;
+}
+
+.sub-navigation a:hover {
+  filter: brightness(60%);
 }
 
 .fa-chevron-down {
