@@ -31,3 +31,9 @@ a {
 .bg-secondary {
   background: #e98074 !important;
 }
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}

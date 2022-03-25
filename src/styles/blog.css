@@ -43,6 +43,9 @@
   width: 100%;
   height: 200px;
   border-radius: 5px 5px 0 0;
+  -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(50%);
+  object-fit: cover;
 }
 
 .next {
@@ -61,4 +64,26 @@
   font-size: 2rem;
   color: #e85a4f;
   cursor: pointer;
+}
+
+/* Content styling */
+
+.content {
+  width: 90%;
+  margin: 30px auto;
+  border: 2px solid red;
+}
+
+.new-bloggers-section {
+  width: 70%;
+  float: right;
+  border: 2px solid red;
+  text-align: center;
+}
+
+.sidebar {
+  border: 2px solid red;
+  width: 30%;
+  float: left;
+  height: 300px;
 }
