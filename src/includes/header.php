@@ -22,7 +22,7 @@
     <div class="main_container">
         <header id="main-header">
             <div class="logo">
-                <h1 class="logo-title">AlacerBlogs</h1>
+                <h1 class="logo-title"><span>Alacer</span>Blogs</h1>
             </div>
             <nav>
                 <ul class="navigation">

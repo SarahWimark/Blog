@@ -19,6 +19,12 @@
   margin: 10px;
 }
 
+.logo-title span {
+  color: #d8c3a5;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+
 .navigation {
   float: right;
   list-style: none;

@@ -1,13 +1,14 @@
 <footer>
     <div class="footer-content">
         <div class="about">
-            <h1 class="logo-title">AlacerBlogs</h1>
+            <h2 class="about-title"><span>Alacer</span>Blogs</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem atque magni quo error, dolore
                 ipsam corrupti aperiam voluptates eaque esse delectus maxime, labore consequatur cupiditate aliquid
                 suscipit cumque ex laboriosam.
             </p>
             <div class="contact-info">
                 <span><i class="fas fa-phone"></i> 123-456789</span>
+
                 <span><i class="fas fa-envelope"></i> info@alacerblogs.com</span>
             </div>
             <div class="social-links">
@@ -17,8 +18,28 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-        <div class="links">2 </div>
-        <div class="contact-form">3 </div>
+        <div class="links">
+            <h2 class="links-title">Links</h2>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Terms and conditions</a></li>
+                <li><a href="#">All Bloggers</a></li>
+                <li><a href="#">All Blogs</a></li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h2 class="contact-form--title">Contact us</h2>
+            <form action="">
+                <input type="email" name="email" id="email" class="contact-form-input"
+                    placeholder="Enter your email...">
+                <textarea name="message" id="message" class="contact-form-input"
+                    placeholder="Enter your message..."></textarea>
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-secondary" name="submit">
+                        Send message <i class="fas fa-paper-plane-top"></i></button>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="footer-bottom">
         &copy; Alacer blogs 2022 | Designed by Sarah Wimark
