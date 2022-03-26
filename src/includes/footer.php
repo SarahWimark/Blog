@@ -1,5 +1,12 @@
 <footer>
-
+    <div class="footer-content">
+        <div class="about"></div>
+        <div class="links"></div>
+        <div class="contact-form"></div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2022 | Designed by Sarah Wimark
+    </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"

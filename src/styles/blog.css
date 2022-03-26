@@ -148,11 +148,9 @@
   line-height: 1.5rem;
 }
 
-.categories {
-}
-
 .categories-title {
   color: #444;
+  margin-bottom: 15px;
 }
 
 .categories ul {
@@ -164,6 +162,7 @@
 .categories ul li {
   width: 80%;
   border-top: 1px solid lightgrey;
+  transition: all 0.4s;
 }
 
 .categories ul li a {
@@ -173,5 +172,6 @@
 }
 
 .categories ul li:hover {
-  margin-left: -3px;
+  padding-left: 10px;
+  transition: all 0.4s;
 }
