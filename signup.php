@@ -21,7 +21,8 @@
                 <input type="password" class="form-control" id="confirm" name="confirm">
             </div>
             <div class="mt-2">
-                <button type="submit" class="btn btn-primary" name="register">Sign up</button>
+                <button type="submit" class="btn btn-secondary" name="register">
+                    Sign up <i class="fas fa-user-plus"></i></button>
             </div>
         </form>
         <div><a href="login.php">Already a member?</a></div>

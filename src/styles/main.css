@@ -26,19 +26,39 @@ body {
 
 a {
   text-decoration: none;
+  color: #444;
+}
+
+a:hover {
+  color: #444;
+  color: #8e8d8a;
 }
 
 .bg-secondary {
   background: #e98074 !important;
 }
 
+.btn-secondary {
+  color: white !important;
+  background: #e98074 !important;
+  border-color: #e98074 !important;
+  margin: 15px 0;
+}
+
+.btn-secondary:hover {
+  color: #e98074 !important;
+  background-color: transparent !important;
+}
+
 .btn-outline-secondary {
   color: #e98074 !important;
   border-color: #e98074 !important;
+  margin: 15px 0;
 }
 
 .btn-outline-secondary:hover {
-  background-color: #eae7dc;
+  color: white !important;
+  background: #e98074 !important;
 }
 
 .clearfix::after {

@@ -69,7 +69,6 @@
     </div>
     <aside class="sidebar">
         <section class="search">
-            <h2 class="search-title">Search</h2>
             <form action="">
                 <input type="text" name="searchterm" class="search-input" placeholder="Search...">
             </form>
