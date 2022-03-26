@@ -35,7 +35,7 @@
                 <textarea name="message" id="message" rows="5" class="contact-form-input"
                     placeholder="Enter your message..."></textarea>
                 <div class="mt-2">
-                    <button type="submit" class="btn btn-secondary" name="submit">
+                    <button type="submit" class="btn btn-secondary contact-form-btn" name="submit">
                         Send message <i class="fas fa-paper-plane-top"></i></button>
                 </div>
             </form>

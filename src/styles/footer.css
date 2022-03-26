@@ -82,10 +82,22 @@ footer {
   border: 1px solid #444;
   display: block;
   padding: 0.6rem 1rem;
-  color: #d8c3a5;
   line-height: 1.5rem;
   margin-bottom: 15px;
   background: #696969;
+}
+
+.contact-form-input::placeholder {
+  color: #eae7dc;
+}
+
+.contact-form-input:focus {
+  background: #3a3a3a;
+}
+
+.contact-form-btn {
+  width: 100%;
+  font-size: 1.2rem;
 }
 
 .footer-bottom {

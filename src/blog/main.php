@@ -1,10 +1,10 @@
 <div class="content clearfix">
     <div class="new-bloggers-section">
-        <h1 class="new-bloggers-section-title">Newest bloggers</h1>
+        <h2 class="new-bloggers-section-title">Newest bloggers</h2>
 
         <div class="blog-card">
             <img src="src/images/blogs/blog_header.png"
-                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img">
+                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img left">
             <div class="blog-card-content">
                 <h2 class="blog-card-title"><a href="#"></a>Lorem ipsum dolor sit amet</h2>
                 <p class="blog-card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem delectus
@@ -20,7 +20,7 @@
         </div>
         <div class="blog-card">
             <img src="src/images/blogs/blog_header.png"
-                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img">
+                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img left">
             <div class="blog-card-content">
                 <h2 class="blog-card-title"><a href="#"></a>Lorem ipsum dolor sit amet</h2>
                 <p class="blog-card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem delectus
@@ -36,7 +36,7 @@
         </div>
         <div class="blog-card">
             <img src="src/images/blogs/blog_header.png"
-                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img">
+                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img left">
             <div class="blog-card-content">
                 <h2 class="blog-card-title"><a href="#"></a>Lorem ipsum dolor sit amet</h2>
                 <p class="blog-card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem delectus
@@ -52,7 +52,7 @@
         </div>
         <div class="blog-card">
             <img src="src/images/blogs/blog_header.png"
-                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img">
+                alt="A blog header image that says Explore the world and with a camera" class="blog-card-img left">
             <div class="blog-card-content">
                 <h2 class="blog-card-title"><a href="#"></a>Lorem ipsum dolor sit amet</h2>
                 <p class="blog-card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem delectus
@@ -67,10 +67,12 @@
             </div>
         </div>
     </div>
-    <aside class="sidebar">
+    <aside class="sidebar left">
         <section class="search">
+            <h2 class="search-title">Search blogs</h2>
+
             <form action="">
-                <input type="text" name="searchterm" class="search-input" placeholder="Search...">
+                <input type="search" name="searchterm" class="search-input" placeholder="Search...">
             </form>
         </section>
 

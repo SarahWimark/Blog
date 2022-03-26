@@ -13,13 +13,13 @@
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password">
             </div>
-            <div class="mt-2">
+            <div class="mt-2 right">
                 <button type="submit" class="btn btn-secondary" name="submit">
                     Login <i class="fa fa-arrow-right-to-bracket"></i></button>
             </div>
         </form>
-        <div><a href="signup.php">Signup instead?</a></div>
-        <div><a href="#">Forgot password?</a></div>
+        <div class="right"><a href="signup.php">Signup instead?</a></div>
+        <div class="right"><a href="#">Forgot password?</a></div>
 
     </div>
 </main>

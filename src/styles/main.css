@@ -50,7 +50,6 @@ li {
   color: white !important;
   background: #e98074 !important;
   border-color: #e98074 !important;
-  margin: 5px 0 !important;
 }
 
 .btn-secondary:hover {
@@ -61,7 +60,6 @@ li {
 .btn-outline-secondary {
   color: #e98074 !important;
   border-color: #e98074 !important;
-  margin: 5px 0 !important;
 }
 
 .btn-outline-secondary:hover {
@@ -73,4 +71,12 @@ li {
   content: "";
   display: block;
   clear: both;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
 }

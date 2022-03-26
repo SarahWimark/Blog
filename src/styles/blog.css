@@ -109,7 +109,6 @@
 .blog-card-img {
   width: 40%;
   height: 100%;
-  float: left;
   border-radius: 6px 0 0 6px;
   -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
   filter: grayscale(50%);
@@ -126,18 +125,19 @@
 /* Sidebar styling */
 
 .sidebar {
-  width: 30%;
-  float: left;
+  width: 29%;
   height: auto;
 }
+
 .sidebar section {
   padding: 20px;
   border-radius: 6px;
   margin-bottom: 10px;
 }
 
-.sidebar {
-  margin-top: 80px;
+.search-title {
+  color: #444;
+  margin-bottom: 15px;
 }
 
 .search-input {
