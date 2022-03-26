@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="src/styles/header.css">
+    <link rel="stylesheet" href="src/styles/footer.css">
     <link rel="stylesheet" href="src/styles/blog.css">
     <link rel="stylesheet" href="src/styles/main.css">
     <title><?php echo TITLE; ?></title>
@@ -21,7 +22,7 @@
     <div class="main_container">
         <header id="main-header">
             <div class="logo">
-                <h1 class="logo-title">LogoTitle</h1>
+                <h1 class="logo-title">AlacerBlogs</h1>
             </div>
             <nav>
                 <ul class="navigation">
