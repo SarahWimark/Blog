@@ -5,6 +5,7 @@
 }
 
 body {
+  height: 100%;
   font-family: "Oswald", sans-serif;
   background-color: #eae7dc;
   background: #eae7dc; /* fallback for old browsers */
@@ -24,13 +25,16 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+main {
+  min-height: 100vh;
+}
+
 a {
   text-decoration: none;
   color: #444;
 }
 
 a:hover {
-  color: #444;
   color: #8e8d8a;
 }
 
@@ -72,7 +76,32 @@ footer {
   color: #f2f2f2;
   height: 400px;
   box-shadow: 0px 0 5px #000;
+  position: relative;
+}
+
+.footer-content {
+  width: 100%;
+  position: absolute;
+  height: 370px;
+  display: flex;
+}
+
+.about,
+.links,
+.contact-form {
+  flex: 1;
+  border: 1px solid red;
+  padding: 25px;
 }
 
 .footer-bottom {
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  margin: 10px 0;
+  width: 100%;
+  height: 30px;
+  color: #8e8d8a;
+  text-align: center;
+  position: absolute;
 }

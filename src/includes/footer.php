@@ -1,8 +1,8 @@
 <footer>
     <div class="footer-content">
-        <div class="about"></div>
-        <div class="links"></div>
-        <div class="contact-form"></div>
+        <div class="about">1 </div>
+        <div class="links">2 </div>
+        <div class="contact-form">3 </div>
     </div>
     <div class="footer-bottom">
         &copy; 2022 | Designed by Sarah Wimark
