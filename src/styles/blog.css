@@ -187,16 +187,19 @@
 
 /* Single post styling */
 
+.post-content {
+  margin-top: 30px;
+}
 .post-title {
   color: #444;
   text-align: center;
-  margin: 20px 0;
   color: #e85a4f;
+  font-weight: bold;
 }
 
 .blog-post-section {
   font-size: 1.1rem;
-  padding: 10px 30px;
+  padding: 20px 30px;
   width: 68%;
   background: rgba(255, 255, 255, 0.5);
   float: left;
@@ -214,4 +217,23 @@
   width: 100%;
   object-fit: cover;
   box-shadow: 4px 5px 5px #444;
+}
+
+.recent-post {
+  margin-bottom: 10px;
+  border-top: 1px solid lightgrey;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.recent-title {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.recent img {
+  height: 60px;
+  width: 70px;
+  margin-right: 20px;
 }

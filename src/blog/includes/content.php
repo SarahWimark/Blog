@@ -25,8 +25,8 @@
                     obcaecati asperiores esse consequuntur quae quo! Non perferendis, dolor dolore explicabo eaque
                     deserunt dignissimos sapiente cumque doloribus harum modi ipsam dolorum illum quis ea, ad delectus,
                     odit porro. Adipisci modi non id assumenda iure sequi?</p>
-                <img src="src/images/uploads/unsplash.jpg"
-                    alt="A blog header image that says Explore the world and with a camera" class="post-image">
+                <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
+                    class="post-image">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ad ea officia cumque sequi modi
                     debitis eaque nihil. Quisquam consequatur ex soluta quis unde eius at quibusdam laborum et optio.
                 </p>
@@ -39,6 +39,35 @@
         </div>
 
         <aside class="sidebar right post-sidebar">
+            <section class="recent">
+                <h2 class="recent-title">Latests posts</h2>
+                <div class="recent-post clearfix">
+                    <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
+                        class="left">
+                    <a href="#" class="recent-link">Some recent topic</a>
+                </div>
+                <div class="recent-post clearfix">
+                    <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
+                        class="left">
+                    <a href="#" class="recent-link">Some other recent topic</a>
+                </div>
+                <div class="recent-post clearfix">
+                    <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
+                        class="left">
+                    <a href="#" class="recent-link">A random recent topic</a>
+                </div>
+                <div class="recent-post clearfix">
+                    <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
+                        class="left">
+                    <a href="#" class="recent-link">Another recent topic</a>
+                </div>
+                <div class="recent-post clearfix">
+                    <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
+                        class="left">
+                    <a href="#" class="recent-link">And this is alos a recent topic</a>
+                </div>
+            </section>
+
             <section class="categories">
                 <h2 class="categories-title">Categories</h2>
                 <ul>
