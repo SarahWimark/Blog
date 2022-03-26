@@ -15,7 +15,7 @@
   overflow: hidden;
   margin: 0 auto;
   width: 80%;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 .new-post {
@@ -65,7 +65,7 @@
   cursor: pointer;
 }
 
-/* Content styling */
+/* Main page styling */
 
 .content {
   width: 80%;
@@ -80,6 +80,10 @@
 .new-bloggers-section {
   width: 70%;
   float: right;
+  padding: 0 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .blog-card {
@@ -133,6 +137,7 @@
   padding: 20px;
   border-radius: 6px;
   margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .search-title {
@@ -178,4 +183,35 @@
 .categories ul li:hover {
   padding-left: 10px;
   transition: all 0.4s;
+}
+
+/* Single post styling */
+
+.post-title {
+  color: #444;
+  text-align: center;
+  margin: 20px 0;
+  color: #e85a4f;
+}
+
+.blog-post-section {
+  font-size: 1.1rem;
+  padding: 10px 30px;
+  width: 68%;
+  background: rgba(255, 255, 255, 0.5);
+  float: left;
+  border-radius: 6px;
+  font-family: "Lato", "sans-serif";
+}
+
+.post-sidebar {
+  margin-left: 20px;
+}
+
+.post-image {
+  margin: 20px 0;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 4px 5px 5px #444;
 }
