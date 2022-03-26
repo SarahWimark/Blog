@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-content">
         <div class="about">
-            <h2 class="about-title"><span>Alacer</span>Blogs</h2>
+            <h3><span>Alacer</span>Blogs</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem atque magni quo error, dolore
                 ipsam corrupti aperiam voluptates eaque esse delectus maxime, labore consequatur cupiditate aliquid
                 suscipit cumque ex laboriosam.
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="links">
-            <h2 class="links-title">Links</h2>
+            <h3>Links</h3>
             <ul>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Terms and conditions</a></li>
@@ -28,11 +28,11 @@
             </ul>
         </div>
         <div class="contact-form">
-            <h2 class="contact-form--title">Contact us</h2>
+            <h3>Contact us</h3>
             <form action="">
                 <input type="email" name="email" id="email" class="contact-form-input"
                     placeholder="Enter your email...">
-                <textarea name="message" id="message" class="contact-form-input"
+                <textarea name="message" id="message" rows="5" class="contact-form-input"
                     placeholder="Enter your message..."></textarea>
                 <div class="mt-2">
                     <button type="submit" class="btn btn-secondary" name="submit">

@@ -136,6 +136,10 @@
   margin-bottom: 10px;
 }
 
+.sidebar {
+  margin-top: 80px;
+}
+
 .search-input {
   width: 80%;
   border-radius: 6px;

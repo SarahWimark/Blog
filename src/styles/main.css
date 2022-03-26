@@ -38,6 +38,10 @@ a:hover {
   color: #8e8d8a;
 }
 
+li {
+  list-style: none;
+}
+
 .bg-secondary {
   background: #e98074 !important;
 }
@@ -46,7 +50,7 @@ a:hover {
   color: white !important;
   background: #e98074 !important;
   border-color: #e98074 !important;
-  margin: 15px 0;
+  margin: 5px 0 !important;
 }
 
 .btn-secondary:hover {
@@ -57,7 +61,7 @@ a:hover {
 .btn-outline-secondary {
   color: #e98074 !important;
   border-color: #e98074 !important;
-  margin: 15px 0;
+  margin: 5px 0 !important;
 }
 
 .btn-outline-secondary:hover {
