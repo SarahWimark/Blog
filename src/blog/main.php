@@ -61,7 +61,8 @@
                     inventore voluptas eius accusantium, ea cum! Odio.</p>
                 <i class="far fa-user"> Bloggers name</i>
                 <div>
-                    <a href="#" class="btn btn-outline-secondary blog-card-btn" role="button" aria-pressed="true">Go to
+                    <a href="src/blog/includes/content.php" class="btn btn-outline-secondary blog-card-btn"
+                        role="button" aria-pressed="true">Go to
                         blog</a>
                 </div>
             </div>
