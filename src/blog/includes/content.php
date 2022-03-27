@@ -39,6 +39,21 @@
         </div>
 
         <aside class="sidebar right post-sidebar">
+
+            <section class="blog-info">
+                <h2 class="blog-title">Blogger name</h2>
+                <hr>
+                <div class="blogger-info clearfix">
+                    <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain">
+                    <hr>
+                    <p class="blog-decription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora iste
+                        mollitia quos assumenda quae, temporibus aliquam repellendus fugit eum ipsa harum consectetur
+                        quo rem inventore asperiores doloremque dolorum. Aut labore optio assumenda placeat eveniet
+                        laudantium ab corporis. Nam quisquam nesciunt soluta velit nisi numquam facilis, ratione fuga
+                        explicabo at animi.</p>
+                </div>
+
+            </section>
             <section class="recent">
                 <h2 class="recent-title">Latests posts</h2>
                 <div class="recent-post clearfix">

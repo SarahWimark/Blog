@@ -189,6 +189,7 @@
 
 .post-content {
   margin-top: 30px;
+  font-family: "Lato", "sans-serif";
 }
 .post-title {
   color: #444;
@@ -204,7 +205,6 @@
   background: rgba(255, 255, 255, 0.5);
   float: left;
   border-radius: 6px;
-  font-family: "Lato", "sans-serif";
 }
 
 .post-sidebar {
@@ -236,4 +236,17 @@
   height: 60px;
   width: 70px;
   margin-right: 20px;
+}
+
+.blog-info {
+  text-align: center;
+  color: #444;
+}
+
+.blog-info img {
+  height: 150px;
+  width: 100%;
+  box-shadow: 4px 5px 5px #444;
+  margin-bottom: 20px;
+  object-fit: cover;
 }
