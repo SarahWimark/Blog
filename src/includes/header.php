@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="src/styles/footer.css">
     <link rel="stylesheet" href="src/styles/blog.css">
     <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/admin.css">
     <title><?php echo TITLE; ?></title>
 </head>
 
