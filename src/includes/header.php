@@ -33,8 +33,8 @@
                     <li><a href="#"><i class="fa fa-user"></i> Logged in user <i class="fa fa-chevron-down"></i></a>
 
                         <ul class="sub-navigation bg-secondary">
-                            <li><a href="#" class="text-secondary">Dashboard</a></li>
-                            <li><a href="#" class="text-danger">Logout</a></li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
