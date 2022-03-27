@@ -1,7 +1,13 @@
 <?php define('TITLE', 'Admin users'); ?>
 <?php include_once('../includes/header.php'); ?>
 
-<main>
-    hello
+<main class="admin-content">
+    <div class="admin-sidebar">
+
+    </div>
+
+    <div class="admin-dashboard">
+
+    </div>
 </main>
 <?php include_once('../includes/footer-small.php'); ?>

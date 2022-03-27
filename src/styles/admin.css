@@ -1,0 +1,16 @@
+.admin-content {
+  height: calc(100% - 70px);
+  display: flex;
+}
+
+.admin-sidebar {
+  flex: 3;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+.admin-dashboard {
+  flex-grow: 1;
+  height: 100vh;
+  border: 1px solid green;
+}
