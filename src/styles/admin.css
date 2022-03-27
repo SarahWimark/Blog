@@ -10,7 +10,7 @@
 }
 
 .admin-dashboard {
-  flex-grow: 1;
+  flex: 9;
   height: 100vh;
   border: 1px solid green;
 }
