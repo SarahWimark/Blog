@@ -1,6 +1,7 @@
 #main-header {
   height: 70px;
-  background-color: #cd5360;
+  /* background-color: #cd5360; */
+  background-color: #444;
   color: #eae7dc;
   font-family: "Lato", sans-serif;
   font-weight: bold;
