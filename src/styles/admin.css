@@ -4,13 +4,12 @@
 }
 
 .admin-sidebar {
-  flex: 3;
+  flex: 2;
   height: 100vh;
-  border: 1px solid red;
+  background: #8e8d8a;
 }
 
 .admin-dashboard {
-  flex: 9;
+  flex: 8;
   height: 100vh;
-  border: 1px solid green;
 }
