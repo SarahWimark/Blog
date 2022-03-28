@@ -11,7 +11,10 @@
     </div>
 
     <div class="admin-dashboard">
-
+        <div class="manage-buttons">
+            <a href=""></a>
+            <a href=""></a>
+        </div>
     </div>
 </main>
 <?php include_once('../includes/footer-small.php'); ?>
