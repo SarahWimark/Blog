@@ -9,7 +9,27 @@
   background: #8e8d8a;
 }
 
+.admin-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+.admin-sidebar ul li a {
+  border-bottom: 1px solid lightgrey;
+  padding: 15px;
+  display: block;
+  color: #eae7dc;
+  font-size: 1.5rem;
+}
+
+.admin-sidebar ul li a:hover {
+  background: #d8c3a5;
+  color: #444;
+}
+
 .admin-dashboard {
   flex: 8;
   height: 100vh;
+  padding: 40px 100px 100px;
+  /*  overflow: scroll; */
 }
