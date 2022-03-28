@@ -70,6 +70,11 @@
 
 .sub-navigation a {
   padding: 10px;
+  color: #444;
+}
+
+.sub-navigation a:hover {
+  color: #8e8d8a;
 }
 
 .fa-chevron-down {
