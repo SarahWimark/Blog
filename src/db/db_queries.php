@@ -5,20 +5,21 @@ require('connection.php');
 function getAllUsers($table) {
     global $conn;
     $sql = "SELECT * FROM $table";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    $result = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     return $result;
 }
 
 function getUserById($table, $id) {
     global $conn;
     $sql = "SELECT * FROM $table WHERE id = $id";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    $result = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     return $result;
 }
+   
 
 function printQueryResult($result) {
     echo "<pre>",print_r($result, true),"</pre>";
