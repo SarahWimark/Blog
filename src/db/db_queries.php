@@ -11,5 +11,8 @@ function getAllUsers($table) {
     return $result;
 }
 
-$usersAll = getAllUsers('users');
-echo "<pre>",print_r($usersAll),"</pre>";
+function printQueryResult($result) {
+    echo "<pre>",print_r($result),"</pre>";
+}
+
+printQueryResult(getAllUSers('users'));
