@@ -21,7 +21,7 @@ function getUserById($table, $id) {
 }
 
 function executeQuery($sql, $data) {
-    
+    //...
 }
    
 function printQueryResult($result) {
