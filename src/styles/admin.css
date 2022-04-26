@@ -1,10 +1,10 @@
 .admin-content {
   height: calc(100% - 70px);
-  display: flex;
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
 
 .admin-sidebar {
-  flex: 2;
   height: 100vh;
   background: #8e8d8a;
 }
@@ -28,8 +28,11 @@
 }
 
 .admin-dashboard {
-  flex: 8;
   height: 100vh;
-  padding: 40px 100px 100px;
+  padding: 20px 20px 100px;
   /*  overflow: scroll; */
+}
+
+.manage-buttons a {
+  margin-left: 10px;
 }

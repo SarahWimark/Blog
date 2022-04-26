@@ -9,9 +9,8 @@
 
     <div class="admin-dashboard">
         <div class="manage-buttons">
-            <a href="">Edit</a>
-            <a href="">Delete</a>
-            <a href="">Publish</a>
+            <a class="btn btn-secondary" href="">Add new</a>
+            <a class="btn btn-success" href="">Manage</a>
         </div>
     </div>
 </main>
