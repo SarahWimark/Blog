@@ -52,8 +52,8 @@
                         laudantium ab corporis. Nam quisquam nesciunt soluta velit nisi numquam facilis, ratione fuga
                         explicabo at animi.</p>
                 </div>
-
             </section>
+            
             <section class="recent">
                 <h2 class="recent-title">Latests posts</h2>
                 <div class="recent-post clearfix">

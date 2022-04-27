@@ -82,12 +82,12 @@
   margin: 50px auto;
 }
 
-.new-bloggers-section-title {
+.all-bloggers-section-title {
   margin: 20px;
   color: #444;
 }
 
-.new-bloggers-section {
+.all-bloggers-section {
   width: 70%;
   float: right;
   padding: 0 20px;
@@ -195,6 +195,13 @@
   transition: all 0.4s;
 }
 
+.blogger-name {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 /* Single post styling */
 
 .post-content {
