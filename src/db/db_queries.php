@@ -2,7 +2,7 @@
 
 require('db_connection.php');
 
-function getAll($table) {
+function getAllFromTable($table) {
     global $conn;
     $sql = "SELECT * FROM $table";
     $stmt = $conn->prepare($sql);
@@ -20,8 +20,9 @@ function getById($table, $id) {
     return $result;
 }
 
-function executeQuery($sql, $data) {
-    //...
+function insertToTable($table, $columns, $values) {
+    global $conn;
+    $sql = "INSERT INTO $table ($columns) VALUES ($values)";
 }
    
 function printQueryResult($result) {
@@ -30,5 +31,5 @@ function printQueryResult($result) {
 }
 
 
-printQueryResult(getById('users', 1));
-//printQueryResult(getAll('users'));
+//printQueryResult(getById('users', 1));
+printQueryResult(getAll('users'));
