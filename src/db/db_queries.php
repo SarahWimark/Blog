@@ -2,7 +2,7 @@
 
 require('db_connection.php');
 
-function getAllUsers($table) {
+function getAll($table) {
     global $conn;
     $sql = "SELECT * FROM $table";
     $stmt = $conn->prepare($sql);
@@ -11,7 +11,7 @@ function getAllUsers($table) {
     return $result;
 }
 
-function getUserById($table, $id) {
+function getById($table, $id) {
     global $conn;
     $sql = "SELECT * FROM $table WHERE id = $id";
     $stmt = $conn->prepare($sql);
@@ -29,5 +29,6 @@ function printQueryResult($result) {
     die();
 }
 
-// printQueryResult(getAllUSers('users'));
-printQueryResult(getUserById('users', 1));
+
+printQueryResult(getById('users', 1));
+//printQueryResult(getAll('users'));
