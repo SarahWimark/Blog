@@ -31,5 +31,5 @@ function printQueryResult($result) {
 }
 
 
-//printQueryResult(getById('users', 1));
+printQueryResult(getById('users', 1));
 printQueryResult(getAll('users'));
