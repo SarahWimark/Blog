@@ -1,6 +1,6 @@
 <?php
 
-require('connection.php');
+require('db_connection.php');
 
 function getAllUsers($table) {
     global $conn;
