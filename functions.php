@@ -37,6 +37,7 @@ function getCredentials(): array
 // password saved in the file and if a match logs in the user
 function checkLogin()
 {
+    echo 'Reached';
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
@@ -48,6 +49,7 @@ function checkLogin()
     foreach ($credentials as $un => $pw) {
         if (password_verify($password, $pw) && $un == $username) {
             $_SESSION['username'] = $username;
+            $_SESSION['loggedIn'] = true;
             header('location: index.php');
             exit();
         } else {
