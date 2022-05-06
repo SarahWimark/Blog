@@ -3,18 +3,28 @@
 session_start();
 
 // Checks the users input and prints a message to the user if credentials are wrong
-function validateUserInput($password, $username)
+function validateUserInput($password, $confirmPW, $username, $email)
 {
-    if (empty($password) && empty($username)) {
-        $_SESSION['error-msg'] = 'Ange ett lösenord och användarnamn';
+    echo 'Reached Validate';
+    if (empty($username)) {
+        $_SESSION['error-msg'] = 'Enter a valid username';
     } else if (empty($password)) {
-        $_SESSION['error-msg'] = 'Ange ett lösenord';
+        $_SESSION['error-msg'] = 'Enter a valid password';
     } else if (strlen($password) < 6) {
-        $_SESSION['error-msg'] = 'Lösenordet måste vara minst 6 tecken långt.';
-    } else if (empty($username)) {
-        $_SESSION['error-msg'] = 'Ange ett användarnamn';
+        $_SESSION['error-msg'] = 'Password has to be atleast 6 characters long';
+    } else if (empty($email)) {
+        $_SESSION['error-msg'] = 'Enter a valid email';
     } else if (strlen($username) < 3) {
         $_SESSION['error-msg'] = 'Användarnamnet måste vara minst 3 tecken långt.';
+    } else if (strcmp($password, $confirmPW == 0)) {
+        $_SESSION['error-msg'] = 'Passwords has to match';
+    }
+}
+
+function validateEmail($email) {
+    echo 'Reached Email';
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $_SESSION['error-msg'] = 'Enter a valid email';
     }
 }
 
@@ -37,7 +47,6 @@ function getCredentials(): array
 // password saved in the file and if a match logs in the user
 function checkLogin()
 {
-    echo 'Reached';
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
@@ -62,28 +71,33 @@ function checkLogin()
 // isn´t already saved in the file. If successful register user are logged in.
 function registerUser()
 {
-   if (isset($_POST['username']) && isset($_POST['password'])) {
+    echo 'Reached';
+   if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['confirm'])) {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
+        $email = sanitize($_POST['email']);
+        $confirmPW = sanitize($_POST['confirm']);
         $credentials = getCredentials();
     }
-    validateUserInput($password, $username);
+    validateUserInput($password, $confirmPW, $username, $email);
+    validateEmail($email);
    $pw_hash = password_hash($password, PASSWORD_DEFAULT);
 
-    if(empty($_SESSION['error-msg']) ) {
+    /* if(empty($_SESSION['error-msg']) ) {
         if (userExist($credentials, $username)) {
             $_SESSION['error-msg'] = "Användaren finns redan";
-        } else {
+        } else { */
+            echo 'Reached File';
             $file = fopen("userInfo.txt", "a") or die("Unable to open file!");
             $usersInfo = "$username:$pw_hash\n";
             fwrite($file, $usersInfo);
             fclose($file);
             $_SESSION['username'] = $username;
-            header("Location: index.php");
+            header("Location: login.php");
             exit();
-        }
+        // }
     }
-}
+
 
 // Logs out the current user and destroys the current session.
 function logout()
