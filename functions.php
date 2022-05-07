@@ -86,8 +86,8 @@ function registerUser()
         } else { */
             insertNewUser($username, $email, $pw_hash);
             //$_SESSION['username'] = $username;
-            // header("Location: index.php");
-            // exit();
+            header("Location: login.php");
+            exit();
         // }
     }
 
