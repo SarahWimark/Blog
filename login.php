@@ -16,11 +16,11 @@ if(isset($_SESSION['username'])) {
         <form action="index.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <input type="text" class="form-control" id="username" name="username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="mt-2">
                 <button type="submit" class="btn btn-secondary" name="submit">

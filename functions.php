@@ -49,7 +49,6 @@ function checkLogin()
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
-        $credentials = getCredentials();
     }
 
     validateUserInput($password, $username);
