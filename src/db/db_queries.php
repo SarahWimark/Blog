@@ -20,9 +20,12 @@ function getById($table, $id) {
     return $result;
 }
 
-function insertToTable($table, $columns, $values) {
+function insertNewUser($username, $email, $password) {
     global $conn;
-    $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+    $sql = "INSERT INTO users (username, email, password) VALUES (?,?,?)";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("sss", $username, $email, $password);
+    $stmt->execute();
 }
    
 function printQueryResult($result) {
@@ -31,5 +34,4 @@ function printQueryResult($result) {
 }
 
 
-printQueryResult(getById('users', 1));
-printQueryResult(getAll('users'));
+// printQueryResult(getById('users', 1));

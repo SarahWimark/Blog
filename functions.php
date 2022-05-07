@@ -1,11 +1,11 @@
 <?php
+include_once("./src/db/db_queries.php");
 // create session
 session_start();
 
 // Checks the users input and prints a message to the user if credentials are wrong
 function validateUserInput($password, $confirmPW, $username, $email)
 {
-    echo 'Reached Validate';
     if (empty($username)) {
         $_SESSION['error-msg'] = 'Enter a valid username';
     } else if (empty($password)) {
@@ -22,7 +22,6 @@ function validateUserInput($password, $confirmPW, $username, $email)
 }
 
 function validateEmail($email) {
-    echo 'Reached Email';
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $_SESSION['error-msg'] = 'Enter a valid email';
     }
@@ -71,30 +70,24 @@ function checkLogin()
 // isn´t already saved in the file. If successful register user are logged in.
 function registerUser()
 {
-    echo 'Reached';
    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['confirm'])) {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
         $email = sanitize($_POST['email']);
         $confirmPW = sanitize($_POST['confirm']);
-        $credentials = getCredentials();
     }
     validateUserInput($password, $confirmPW, $username, $email);
     validateEmail($email);
-   $pw_hash = password_hash($password, PASSWORD_DEFAULT);
+    $pw_hash = password_hash($password, PASSWORD_DEFAULT);
 
     /* if(empty($_SESSION['error-msg']) ) {
         if (userExist($credentials, $username)) {
             $_SESSION['error-msg'] = "Användaren finns redan";
         } else { */
-            echo 'Reached File';
-            $file = fopen("userInfo.txt", "a") or die("Unable to open file!");
-            $usersInfo = "$username:$pw_hash\n";
-            fwrite($file, $usersInfo);
-            fclose($file);
-            $_SESSION['username'] = $username;
-            header("Location: login.php");
-            exit();
+            insertNewUser($username, $email, $pw_hash);
+            //$_SESSION['username'] = $username;
+            // header("Location: index.php");
+            // exit();
         // }
     }
 
