@@ -2,6 +2,8 @@
 
 require('db_connection.php');
 
+session_start();
+
 function getAllFromTable($table) {
     global $conn;
     $sql = "SELECT * FROM $table";
@@ -30,32 +32,41 @@ function insertNewUser($username, $email, $password) {
 
 function userCredentials($username, $password) {
     global $conn;
-    if ($stmt = $conn->prepare('SELECT id, password FROM users WHERE username = ?')) {
+    $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
+        
         // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
         $stmt->bind_param('s', $username);
         $stmt->execute();
         // Store the result so we can check if the account exists in the database.
         $stmt->store_result();
-        if ($stmt->num_rows > 0) {
-            $stmt->bind_result($userId, $pw);
+        $stmt->bind_result($userId, $pw);
+      
+        echo $stmt->num_rows;
+        if ($stmt->num_rows == 1) { 
             $stmt->fetch();
             // Account exists, now we verify the password.
             // Note: remember to use password_hash in your registration file to store the hashed passwords.
             if (password_verify($password, $pw)) {
                 // Verification success! User has logged-in!
                 // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
-               return true;
+
+                
+                // Store data in session variables
+                $_SESSION["loggedIn"] = true;
+                $_SESSION["username"] = $username;                            
+                
+                // Redirect user to welcome page
+                header("location: index.php");
+                exit();
             } else {
-               return false;
+                echo "Reached user wrong1";
+                $_SESSION['error-msg'] = "Invalid username or password.";
             }
         } else {
-            return false;
+            echo "Reached user wrong2";
+            $_SESSION['error-msg'] = "Invalid username or password.";
         }
-    
-       // $stmt->close();
-    }
-   
-    return false;
+        $stmt->close();
 }
    
 // function printQueryResult($result) {

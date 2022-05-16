@@ -46,26 +46,32 @@ function getCredentials(): array
 // password saved in the file and if a match logs in the user
 function checkLogin()
 {
+    
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
     }
-
-    validateUserInput($password, $username);
-    if(userCredentials($password, $username)) {
-              // Password is correct, so start a new session
-              session_start();
+   
+    validateUserInput($password,"", $username,"");
+    echo "Reached";
+    
+    userCredentials($username, $password);
+    echo $_SESSION['username'];
+    
+        //       // Password is correct, so start a new session
+        //       session_start();
                 
-              // Store data in session variables
-              $_SESSION["loggedIn"] = true;
-              $_SESSION["username"] = $username;                            
+        //       // Store data in session variables
+        //       $_SESSION["loggedIn"] = true;
+        //       $_SESSION["username"] = $username;                            
               
-              // Redirect user to welcome page
-              header("location: index.php");
-          } else{
-              // Username doesn't exist, display a generic error message
-              $_SESSION['error-msg'] = "Invalid username or password.";
-           }
+        //       // Redirect user to welcome page
+        //       header("location: index.php");
+        //       exit();
+        //   } else{
+        //       // Username doesn't exist, display a generic error message
+        //       $_SESSION['error-msg'] = "Invalid username or password.";
+        //    }
 
     // foreach ($credentials as $un => $pw) {
     //     if (password_verify($password, $pw) && $un == $username) {
@@ -78,6 +84,7 @@ function checkLogin()
     //     }
     // }
 }
+
 
 // Register a new user 
 function registerUser()
@@ -109,6 +116,7 @@ function logout()
 {
     session_destroy();
     unset($_SESSION['username']);
+    unset($_SESSION['loggedIn']);
     header("location: login.php");
     exit();
 }

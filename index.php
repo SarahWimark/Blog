@@ -15,7 +15,7 @@ if (isset($_POST['register'])) {
     registerUser();
 } else if (isset($_POST['submit'])) {
     checkLogin();
-} else if (isset($_POST['logout'])) {
+} else if (isset($_GET['logout'])) {
     logout();
 }
 ?>

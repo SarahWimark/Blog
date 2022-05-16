@@ -37,13 +37,14 @@
                     <?php
                     } ?>
                     <?php
-                    if($_SESSION['username']){
+                    if(!$_SESSION['username']){
                     ?>
-                    <li><a href="#"><i class="fa fa-user"></i> Logged in user <i class="fa fa-chevron-down"></i></a>
+                    <li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?><i
+                                class="fa fa-chevron-down"></i></a>
 
                         <ul class="sub-navigation bg-secondary">
                             <li><a href="src/admin/post/post.php">Dashboard</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="index.php?logout=true">Logout</a></li>
                         </ul>
                     </li>
                     <?php
