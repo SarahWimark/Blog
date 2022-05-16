@@ -28,10 +28,9 @@ function insertNewUser($username, $email, $password) {
     $stmt->execute();
 }
    
-function printQueryResult($result) {
-    echo "<pre>",print_r($result, true),"</pre>";
-    die();
-}
-
+// function printQueryResult($result) {
+//     echo "<pre>",print_r($result, true),"</pre>";
+//     die();
+// }
 
 // printQueryResult(getById('users', 1));

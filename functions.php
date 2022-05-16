@@ -65,8 +65,7 @@ function checkLogin()
     }
 }
 
-// Register a new user and save the credentials to a file if username
-// isn´t already saved in the file. If successful register user are logged in.
+// Register a new user 
 function registerUser()
 {
    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['confirm'])) {
