@@ -52,17 +52,31 @@ function checkLogin()
     }
 
     validateUserInput($password, $username);
+    if(userCredentials($password, $username)) {
+              // Password is correct, so start a new session
+              session_start();
+                
+              // Store data in session variables
+              $_SESSION["loggedIn"] = true;
+              $_SESSION["username"] = $username;                            
+              
+              // Redirect user to welcome page
+              header("location: index.php");
+          } else{
+              // Username doesn't exist, display a generic error message
+              $_SESSION['error-msg'] = "Invalid username or password.";
+           }
 
-    foreach ($credentials as $un => $pw) {
-        if (password_verify($password, $pw) && $un == $username) {
-            $_SESSION['username'] = $username;
-            $_SESSION['loggedIn'] = true;
-            header('location: index.php');
-            exit();
-        } else {
-            $_SESSION['error-msg'] = "Användarnamnet eller lösenordet är felaktigt";
-        }
-    }
+    // foreach ($credentials as $un => $pw) {
+    //     if (password_verify($password, $pw) && $un == $username) {
+    //         $_SESSION['username'] = $username;
+    //         $_SESSION['loggedIn'] = true;
+    //         header('location: index.php');
+    //         exit();
+    //     } else {
+    //         $_SESSION['error-msg'] = "Användarnamnet eller lösenordet är felaktigt";
+    //     }
+    // }
 }
 
 // Register a new user 

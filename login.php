@@ -5,7 +5,7 @@
 
 session_start();
 // If there is an active session redirect user to index page
-if(isset($_SESSION['username'])) {
+if(isset($_SESSION['loggedIn'])) {
     header("Location: index.php");
     exit();
 }
@@ -29,9 +29,6 @@ if(isset($_SESSION['username'])) {
         </form>
 
         <div><a href="signup.php">Signup instead?</a></div>
-        <div><a href="#">Forgot password?</a></div>
-
-
     </div>
 </main>
 
