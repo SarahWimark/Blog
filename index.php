@@ -3,7 +3,7 @@
 <?php include_once('functions.php'); ?>
 
 <?php
-
+ session_start();
 // If there is no session redirect user to login page
 // if(!isset($_SESSION['username'])) {
 //     header("Location: login.php");
