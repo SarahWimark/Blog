@@ -1,5 +1,8 @@
 <?php include_once('./dashboard.php'); ?>
-
+<div class="manage-buttons">
+    <a class="btn btn-secondary" href="">Add new post</a>
+    <a class="btn btn-success" href="">Manage posts</a>
+</div>
 <div class="container w-25 mt-5 shadow p-4 bg-white rounded">
     <form action="index.php" method="post">
         <div class="form-group">
@@ -27,4 +30,4 @@
 </div>
 
 </div>
-</main>
+</div>
