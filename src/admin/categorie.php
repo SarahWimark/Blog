@@ -78,26 +78,15 @@
             <td>Moderator</td>
             <td><span class="status text-warning">&bull;</span> Inactive</td>
             <td>
-                <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
-                        class="material-icons">&#xE8B8;</i></a>
+                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
+                        class="fa-solid fa-pen-to-square"></i></a>
                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="material-icons">&#xE5C9;</i></a>
+                        class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
     </tbody>
 </table>
-<div class="clearfix">
-    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-    <ul class="pagination">
-        <li class="page-item disabled"><a href="#">Previous</a></li>
-        <li class="page-item"><a href="#" class="page-link">1</a></li>
-        <li class="page-item"><a href="#" class="page-link">2</a></li>
-        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-        <li class="page-item"><a href="#" class="page-link">4</a></li>
-        <li class="page-item"><a href="#" class="page-link">5</a></li>
-        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-    </ul>
-</div>
+
 </div>
 </div>
 <?php include_once('../includes/footer-small.php'); ?>
