@@ -1,3 +1,5 @@
+<?php include_once('./dashboard.php'); ?>
+
 <div class="container w-25 mt-5 shadow p-4 bg-white rounded">
     <form action="index.php" method="post">
         <div class="form-group">
@@ -23,3 +25,5 @@
     </form>
     <div><a href="login.php">Already a member?</a></div>
 </div>
+</div>
+</main>

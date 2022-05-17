@@ -3,4 +3,7 @@
 
 <?php include_once('./dashboard.php'); ?>
 
+</div>
+</main>
+
 <?php include_once('../includes/footer-small.php'); ?>
