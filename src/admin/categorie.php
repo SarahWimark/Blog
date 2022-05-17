@@ -3,8 +3,7 @@
 
 <?php include_once('./dashboard.php'); ?>
 <div class="manage-buttons">
-    <a class="btn btn-secondary" href="">Add new category</a>
-    <a class="btn btn-success" href="">Manage categories</a>
+    <a class="btn btn-secondary" href=""> <i class="fas fa-plus"></i> Add new category</a>
 </div>
 <table class="table mt-3 table-striped table-hover">
     <thead>
