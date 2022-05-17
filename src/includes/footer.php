@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; Alacer blogs 2022 | Designed by Sarah Wimark
+        &copy; Alacer blogs 2022
     </div>
 </footer>
 

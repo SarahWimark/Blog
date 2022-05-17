@@ -1,6 +1,16 @@
 <?php define('TITLE', 'Sign up'); ?>
 <?php include_once('./src/includes/header.php'); ?>
 
+<?php
+
+session_start();
+// If there is an active session redirect user to index page
+if(isset($_SESSION['loggedIn'])) {
+    header("Location: index.php");
+    exit();
+}
+;?>
+
 <main>
     <div class="container w-25 mt-5 shadow p-4 bg-white rounded">
         <form action="index.php" method="post">
