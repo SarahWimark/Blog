@@ -1,5 +1,11 @@
-<?php include_once('./dashboard.php'); ?>
+<?php define('TITLE', 'Create categorie'); ?>
+<?php include_once('../includes/header.php'); ?>
 
+<?php include_once('./dashboard.php'); ?>
+<div class="manage-buttons">
+    <a class="btn btn-success" href="src/admin/categorie.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
+        categories</a>
+</div>
 <div class="container w-25 mt-5 shadow p-4 bg-white rounded">
     <form action="index.php" method="post">
         <div class="form-group">
@@ -27,3 +33,4 @@
 </div>
 </div>
 </div>
+<?php include_once('../includes/footer-small.php'); ?>

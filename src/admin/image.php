@@ -3,7 +3,7 @@
 
 <?php include_once('./dashboard.php'); ?>
 <div class="manage-buttons">
-    <a class="btn btn-secondary" href=""><i class="fas fa-plus"></i> Add new image</a>
+    <a class="btn btn-secondary" href="src/admin/upload-image.php"><i class="fas fa-plus"></i> Add new image</a>
 </div>
 <table class="table mt-3 table-striped table-hover">
     <thead>
