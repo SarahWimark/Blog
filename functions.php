@@ -46,43 +46,14 @@ function getCredentials(): array
 // password saved in the file and if a match logs in the user
 function checkLogin()
 {
-    
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
     }
    
     validateUserInput($password,"", $username,"");
-    echo "Reached";
-    
     userCredentials($username, $password);
     echo $_SESSION['username'];
-    
-        //       // Password is correct, so start a new session
-        //       session_start();
-                
-        //       // Store data in session variables
-        //       $_SESSION["loggedIn"] = true;
-        //       $_SESSION["username"] = $username;                            
-              
-        //       // Redirect user to welcome page
-        //       header("location: index.php");
-        //       exit();
-        //   } else{
-        //       // Username doesn't exist, display a generic error message
-        //       $_SESSION['error-msg'] = "Invalid username or password.";
-        //    }
-
-    // foreach ($credentials as $un => $pw) {
-    //     if (password_verify($password, $pw) && $un == $username) {
-    //         $_SESSION['username'] = $username;
-    //         $_SESSION['loggedIn'] = true;
-    //         header('location: index.php');
-    //         exit();
-    //     } else {
-    //         $_SESSION['error-msg'] = "Användarnamnet eller lösenordet är felaktigt";
-    //     }
-    // }
 }
 
 
@@ -98,17 +69,10 @@ function registerUser()
     validateUserInput($password, $confirmPW, $username, $email);
     validateEmail($email);
     $pw_hash = password_hash($password, PASSWORD_DEFAULT);
-
-    /* if(empty($_SESSION['error-msg']) ) {
-        if (userExist($credentials, $username)) {
-            $_SESSION['error-msg'] = "Användaren finns redan";
-        } else { */
-            insertNewUser($username, $email, $pw_hash);
-            //$_SESSION['username'] = $username;
-            header("Location: login.php");
-            exit();
-        // }
-    }
+    insertNewUser($username, $email, $pw_hash);
+    header("Location: login.php");
+    exit();    
+}
 
 
 // Logs out the current user and destroys the current session.
@@ -117,6 +81,7 @@ function logout()
     session_destroy();
     unset($_SESSION['username']);
     unset($_SESSION['loggedIn']);
+    unset($_SESSION['userId']);
     header("location: login.php");
     exit();
 }
@@ -129,14 +94,19 @@ function sanitize($data){
     return $data;
 }
 
-// Check if a username already exists in the file
-function userExist($credentials, $username): bool{
-    foreach ($credentials as $un => $pw) {
-        if ($un == $username) {
-            return true;
-        }
+function addNewCategory() {
+    echo "Reached addnew";
+      //  if (isset($_POST['categoryname']) ) {
+       // $categoryName = sanitize($_POST['categoryname']);
+        insertNewCategory($categoryName);
+//}
+  /*       $_SESSION['error-msg'] = 'Enter a valid category name';
+    } else {
+        $categoryName = sanitize($_POST['categoryname']);
+        insertNewCategory($categoryName);
     }
-    return false;
-}
 
+    $categoryName = sanitize($_POST['categoryname']);
+        insertNewCategory($categoryName); */
+}
 ?>
