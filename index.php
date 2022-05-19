@@ -17,6 +17,10 @@ if (isset($_POST['register'])) {
     checkLogin();
 } else if (isset($_GET['logout'])) {
     logout();
+} else if (isset($_POST['newcategory'])) {
+    addNewcategory();
+} else if (isset($_POST['newpost'])) {
+    addNewPost();
 }
 ?>
 

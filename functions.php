@@ -95,18 +95,26 @@ function sanitize($data){
 }
 
 function addNewCategory() {
-    echo "Reached addnew";
-      //  if (isset($_POST['categoryname']) ) {
-       // $categoryName = sanitize($_POST['categoryname']);
-        insertNewCategory($categoryName);
-//}
-  /*       $_SESSION['error-msg'] = 'Enter a valid category name';
-    } else {
+       if (!isset($_POST['categoryname']) && empty($_POST['categoryname']) ) {
+        $_SESSION['error-msg'] = 'Enter a valid category name';
+           
+       } else {
         $categoryName = sanitize($_POST['categoryname']);
         insertNewCategory($categoryName);
+        header("location: src/admin/categorie.php");
+        exit();
     }
+}
 
-    $categoryName = sanitize($_POST['categoryname']);
-        insertNewCategory($categoryName); */
+function addNewPost() {
+       if (!isset($_POST['title']) && isset($_POST['text']) isset($_POST['text']) ) {
+        $_SESSION['error-msg'] = 'Enter a valid category name';
+           
+       } else {
+        $categoryName = sanitize($_POST['categoryname']);
+        insertNewCategory($categoryName);
+        header("location: src/admin/categorie.php");
+        exit();
+    }
 }
 ?>
