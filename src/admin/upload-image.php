@@ -6,31 +6,22 @@
     <a class="btn btn-success" href="src/admin/image.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
         images</a>
 </div>
-<div class="container w-25 mt-5 shadow p-4 bg-white rounded">
+<div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="index.php" method="post">
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
+            <label for="imagedesc" class="mt-2 mb-2">Image description</label>
+            <input type="text" class="form-control" id="imagedesc" name="imagedesc">
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="username" name="username">
+            <label for="image" class="mt-3 mb-3">Image: </label>
+            <input type="file" class="form-control-file" id="image" name="image">
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="email" name="email">
-        </div>
-        <div class="form-group">
-            <label for="password">Confirm Password</label>
-            <input type="password" class="form-control" id="confirm" name="confirm">
-        </div>
-        <div class="mt-2">
-            <button type="submit" class="btn btn-secondary" name="register">
-                Sign up <i class="fas fa-user-plus"></i></button>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-secondary right" name="newimage">
+                Add new image <i class="fas fa-user-plus"></i></button>
         </div>
     </form>
-    <div><a href="login.php">Already a member?</a></div>
 </div>
-</div>
+
 </div>
 <?php include_once('../includes/footer-small.php'); ?>

@@ -6,30 +6,32 @@
     <a class="btn btn-success" href="src/admin/post.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
         posts</a>
 </div>
-<div class="container w-25 mt-5 shadow p-4 bg-white rounded">
+<div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="index.php" method="post">
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
+            <label for="title" class="mt-2 mb-2">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="username" name="username">
+            <label for="text" class="mt-2 mb-2">Text</label>
+            <textarea class="form-control" id="text" name="text"></textarea>
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="email" name="email">
+            <label for="title" class="mt-2 mb-2">Topic</label>
+            <select name="posttopic" class="form-control">
+                <option value="lifestyle">Lifestyle</option>
+                <option value="training">Training</option>
+            </select>
         </div>
         <div class="form-group">
-            <label for="password">Confirm Password</label>
-            <input type="password" class="form-control" id="confirm" name="confirm">
+            <label for="postimage" class="mt-3 mb-3">Image: </label>
+            <input type="file" class="form-control-file" id="postimage" name="postimage">
         </div>
-        <div class="mt-2">
-            <button type="submit" class="btn btn-secondary" name="register">
-                Sign up <i class="fas fa-user-plus"></i></button>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-secondary right" name="newpost">
+                Add new post <i class="fas fa-user-plus"></i></button>
         </div>
     </form>
-    <div><a href="login.php">Already a member?</a></div>
 </div>
 
 </div>
