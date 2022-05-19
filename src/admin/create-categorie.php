@@ -7,7 +7,7 @@
         categories</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
-    <form action="index.php" method="post">
+    <form action="src/admin/categorie.php" method="post">
         <div class="form-group">
             <label for="categoryname" class="mt-2 mb-2">Category name</label>
             <input type="text" class="form-control" id="categoryname" name="categoryname">

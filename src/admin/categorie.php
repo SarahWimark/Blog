@@ -1,7 +1,16 @@
-<?php define('TITLE', 'Admin categories'); ?>
-<?php include_once('../includes/header.php'); ?>
+<?php
+define('TITLE', 'Admin categories'); 
+include_once('../includes/header.php'); 
+include_once('./dashboard.php'); 
+include_once('../../functions.php')
+?>
 
-<?php include_once('./dashboard.php'); ?>
+<?php 
+if (isset($_POST['newcategory'])) {
+    addNewCategory();
+ }
+?>
+
 <div class="manage-buttons">
     <a class="btn btn-secondary" href="src/admin/create-categorie.php"> <i class="fas fa-plus"></i> Add new category</a>
 </div>

@@ -30,10 +30,17 @@ function insertNewUser($username, $email, $password) {
     $stmt->execute();
 }
 
+function insertNewCategory($categoryName) {
+    global $conn;
+    $sql = "INSERT INTO categories (category_name) VALUES (?)";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("s", $categoryName);
+    $stmt->execute(); 
+}
+
 function userCredentials($username, $password) {
     global $conn;
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
-        
         // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
         $stmt->bind_param('s', $username);
         $stmt->execute();
@@ -49,21 +56,18 @@ function userCredentials($username, $password) {
             if (password_verify($password, $pw)) {
                 // Verification success! User has logged-in!
                 // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
-
-                
                 // Store data in session variables
                 $_SESSION["loggedIn"] = true;
+                $_SESSION["userId"] = $userId;
                 $_SESSION["username"] = $username;                            
                 
                 // Redirect user to welcome page
                 header("location: index.php");
                 exit();
             } else {
-                echo "Reached user wrong1";
                 $_SESSION['error-msg'] = "Invalid username or password.";
             }
         } else {
-            echo "Reached user wrong2";
             $_SESSION['error-msg'] = "Invalid username or password.";
         }
         $stmt->close();
