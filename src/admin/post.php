@@ -1,7 +1,10 @@
-<?php define('TITLE', 'Admin posts'); ?>
-<?php include_once('../includes/header.php'); ?>
+<?php define('TITLE', 'Admin posts'); 
+include_once('../includes/header.php'); 
+include_once('./dashboard.php');
+include_once('../../functions.php');
+include_once('../db/db_queries.php');
+?>
 
-<?php include_once('./dashboard.php'); ?>
 <div class="manage-buttons">
     <a class="btn btn-secondary" href="src/admin/create-post.php"> <i class="fas fa-plus"></i> Add new post</a>
 </div>

@@ -11,20 +11,28 @@ include_once('../db/db_queries.php');
         posts</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
-    <form action="index.php" method="post">
+    <form action="src/admin/post.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Title</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <input type="text" class="form-control" id="title" name="title" required>
         </div>
         <div class="form-group">
             <label for="text" class="mt-2 mb-2">Text</label>
-            <textarea class="form-control" id="text" name="text"></textarea>
+            <textarea class="form-control" id="text" name="text" required></textarea>
         </div>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Topic</label>
-            <select name="posttopic" class="form-control">
-                <option value="lifestyle">Lifestyle</option>
-                <option value="training">Training</option>
+            <select name="posttopic" class="form-control" required>
+                <?php
+        $categories = getCategories();
+        if(!$categories) {
+            echo "No categories found";
+        }
+        foreach($categories as $category):
+        ?>
+                <option value="<?php echo $category['category_name']; ?>"><?php echo $category['category_name']; ?>
+                </option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">

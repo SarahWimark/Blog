@@ -109,16 +109,14 @@ function getCategories() {
     return $allCategories;
 }
 
-/*
+
 function addNewPost() {
-       if (!isset($_POST['title']) && isset($_POST['text']) isset($_POST['text']) ) {
+    if (isset($_POST['title']) && isset($_POST['text']) ) {
         $_SESSION['error-msg'] = 'Enter a valid category name';
            
        } else {
         $categoryName = sanitize($_POST['categoryname']);
         insertNewCategory($categoryName);
-        header("location: src/admin/categorie.php");
-        exit();
     }
-} */
+} 
 ?>
