@@ -2,7 +2,14 @@
 define('TITLE', 'Admin categories'); 
 include_once('../includes/header.php'); 
 include_once('./dashboard.php'); 
-include_once('../../functions.php')
+include_once('../../functions.php');
+include_once('../db/db_queries.php');
+
+?>
+<?php
+if (isset($_POST['newcategory'])) {
+    addNewcategory();
+}
 ?>
 
 <div class="manage-buttons">
@@ -12,7 +19,7 @@ include_once('../../functions.php')
     <thead>
         <tr>
             <th>Categories</th>
-            <th>Date Created</th>
+            <th></th>
             <th>Edit/Delete</th>
         </tr>
     </thead>
@@ -20,7 +27,7 @@ include_once('../../functions.php')
 
         <tr>
             <td><a href="#">Category</a></td>
-            <td>12/08/2017</td>
+            <td></td>
             <td>
                 <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
                         class="fa-solid fa-pen-to-square"></i></a>

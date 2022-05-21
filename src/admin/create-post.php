@@ -1,7 +1,11 @@
-<?php define('TITLE', 'Create post'); ?>
-<?php include_once('../includes/header.php'); ?>
+<?php 
+define('TITLE', 'Create post'); 
+include_once('../includes/header.php'); 
+include_once('./dashboard.php');
+include_once('../../functions.php');
+include_once('../db/db_queries.php');
+ ?>
 
-<?php include_once('./dashboard.php'); ?>
 <div class="manage-buttons">
     <a class="btn btn-success" href="src/admin/post.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
         posts</a>
