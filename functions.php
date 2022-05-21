@@ -101,16 +101,15 @@ function addNewCategory() {
        } else {
         $categoryName = sanitize($_POST['categoryname']);
         insertNewCategory($categoryName);
-        header("location: src/admin/categorie.php");
-        exit();
     }
 }
 
-/* function getCategories() {
+function getCategories() {
     $allCategories = getAllFromTable('categories');
     return $allCategories;
 }
 
+/*
 function addNewPost() {
        if (!isset($_POST['title']) && isset($_POST['text']) isset($_POST['text']) ) {
         $_SESSION['error-msg'] = 'Enter a valid category name';

@@ -24,9 +24,16 @@ if (isset($_POST['newcategory'])) {
         </tr>
     </thead>
     <tbody>
-
+        <?php
+        $categories = getCategories();
+        if(!$categories) {
+            echo "No categories found";
+        }
+        foreach($categories as $category):
+        ?>
         <tr>
-            <td><a href="#">Category</a></td>
+            <td><?php echo $category['category_name']; ?>
+            </td>
             <td></td>
             <td>
                 <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
@@ -35,26 +42,7 @@ if (isset($_POST['newcategory'])) {
                         class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
-        <tr>
-            <td><a href="#">Category</a></td>
-            <td>12/08/2017</td>
-            <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><a href="#">Category</a></td>
-            <td>12/08/2017</td>
-            <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
-            </td>
-        </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 

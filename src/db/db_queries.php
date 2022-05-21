@@ -31,7 +31,6 @@ function insertNewUser($username, $email, $password) {
 }
 
 function insertNewCategory($categoryName) {
-    echo "reached insert";
     global $conn;
     $sql = "INSERT INTO categories (category_name) VALUES (?)";
     $stmt= $conn->prepare($sql);
