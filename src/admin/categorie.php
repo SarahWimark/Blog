@@ -4,11 +4,11 @@ include_once('../includes/header.php');
 include_once('./dashboard.php'); 
 include_once('../../functions.php');
 include_once('../db/db_queries.php');
-
 ?>
+
 <?php
 if (isset($_POST['newcategory'])) {
-    addNewcategory();
+    addNewCategory();
 }
 ?>
 

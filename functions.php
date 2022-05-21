@@ -3,6 +3,18 @@ include_once("./src/db/db_queries.php");
 // create session
 session_start();
 
+$upload_errors = array(
+    // http://www.php.net/manual/en/features.file-upload.errors.php
+    UPLOAD_ERR_OK          => "Inga fel.",
+    UPLOAD_ERR_INI_SIZE    => "Filen är större än den storlek som anges i php.ini (upload_max_filesize).",
+    UPLOAD_ERR_FORM_SIZE   => "Filen är större än den största filstorlek som angets i formuläret (MAX_FILE_SIZE).",
+    UPLOAD_ERR_PARTIAL     => "Filen blev delvis uppladdad.",
+    UPLOAD_ERR_NO_FILE     => "Ingen fil är vald.",
+    UPLOAD_ERR_NO_TMP_DIR  => "Ingen temporär katalog finns på webbservern.",
+    UPLOAD_ERR_CANT_WRITE  => "Kan inte skriva till disk.",
+    UPLOAD_ERR_EXTENSION   => "Filuppladdningen är stoppad av ett tillägg (extension)."
+);
+
 // Checks the users input and prints a message to the user if credentials are wrong
 function validateUserInput($password, $confirmPW, $username, $email)
 {
@@ -114,9 +126,26 @@ function addNewPost() {
     if (isset($_POST['title']) && isset($_POST['text']) ) {
         $_SESSION['error-msg'] = 'Enter a valid category name';
            
-       } else {
-        $categoryName = sanitize($_POST['categoryname']);
-        insertNewCategory($categoryName);
-    }
+       } 
+} 
+
+function addNewImage() {
+    if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {
+        $tmp_filename = $_FILES['image']['tmp_name'];
+        $upload_dir = "./src/images/uploads/";
+        $fileName = basename($_FILES['image']['name']);
+
+        if(move_uploaded_file($tmp_filename, $upload_dir . $fileName)) {
+           echo "Filen har laddats upp.";
+        } else {
+            $error = $_FILES['image']['error'];
+            $message = $upload_errors[$error];
+            echo $message;
+        }
+        $description = sanitize($_POST['imagedesc']);
+        insertNewImage($fileName, $description);    
+        } else {
+         $_SESSION['error-msg'] = 'Enter valid credentials';
+    }   
 } 
 ?>

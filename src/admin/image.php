@@ -1,7 +1,15 @@
-<?php define('TITLE', 'Admin images'); ?>
-<?php include_once('../includes/header.php'); ?>
+<?php define('TITLE', 'Admin images'); 
+include_once('../includes/header.php'); 
+include_once('./dashboard.php'); 
+include_once('../../functions.php');
+include_once('../db/db_queries.php');
+?>
 
-<?php include_once('./dashboard.php'); ?>
+<?php
+if (isset($_POST['newimage'])) {
+  addNewImage();
+}
+?>
 <div class="manage-buttons">
     <a class="btn btn-secondary" href="src/admin/upload-image.php"><i class="fas fa-plus"></i> Add new image</a>
 </div>

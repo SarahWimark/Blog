@@ -38,6 +38,14 @@ function insertNewCategory($categoryName) {
     $stmt->execute(); 
 }
 
+function insertNewImage($fileName, $description) {
+    global $conn;
+    $sql = "INSERT INTO images (filename, description) VALUES (?,?)";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ss", $fileName, $description);
+    $stmt->execute(); 
+}
+
 function userCredentials($username, $password) {
     global $conn;
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
