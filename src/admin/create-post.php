@@ -18,7 +18,7 @@ include_once('../db/db_queries.php');
         </div>
         <div class="form-group">
             <label for="text" class="mt-2 mb-2">Text</label>
-            <textarea class="form-control" id="text" name="text" required></textarea>
+            <textarea class="form-control" rows="10" id="text" name="text" required></textarea>
         </div>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Topic</label>

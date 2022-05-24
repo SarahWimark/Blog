@@ -15,8 +15,9 @@ function getAllFromTable($table) {
 
 function getById($table, $id) {
     global $conn;
-    $sql = "SELECT * FROM $table WHERE id = $id";
+    $sql = "SELECT * FROM $table WHERE id = ?";
     $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $id);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
     return $result;
@@ -29,17 +30,17 @@ function getImageId($filename) {
     $stmt->bind_param('s', $filename);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
-    return $result; 
+    return $result['id']; 
 }
 
 function getTopicId($categoryName) {
     global $conn;
-    $sql = "SELECT id FROM categories WHERE filename=?";
+    $sql = "SELECT id FROM categories WHERE category_name=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $categoryName);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
-    return $result; 
+    return $result['id'];  
 } 
 
 function insertNewUser($username, $email, $password) {
@@ -68,7 +69,17 @@ function insertNewImage($fileName, $description) {
 
 function getUsersImages() {
     global $conn;
-    $sql = "SELECT * FROM images WHERE userId=?";
+    $sql = "SELECT * FROM images WHERE userId=? ORDER BY created_at desc";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $_SESSION["userId"]);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $result; 
+}
+
+function getUsersPosts() {
+    global $conn;
+    $sql = "SELECT * FROM posts WHERE user_id=? ORDER BY created_at desc";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $_SESSION["userId"]);
     $stmt->execute();
@@ -122,9 +133,9 @@ function userCredentials($username, $password) {
         $stmt->close();
 }
    
-// function printQueryResult($result) {
-//     echo "<pre>",print_r($result, true),"</pre>";
-//     die();
-// }
+/*   function printQueryResult($result) {
+     echo "<pre>",print_r($result, true),"</pre>";
+     die();
+}
 
-// printQueryResult(getUsersImages());
+ printQueryResult(getById($images, 22));  */

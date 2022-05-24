@@ -19,16 +19,26 @@ if (isset($_POST['newpost'])) {
         <tr>
             <th>Image</th>
             <th>Title</th>
+            <th>Topic</th>
             <th>Date Created</th>
             <th>Edit/Delete</th>
         </tr>
     </thead>
     <tbody>
-
+        <?php
+        $posts = getUsersPosts();
+        if(!$posts) {
+            echo "No posts found";
+        }
+        foreach($posts as $post):
+         $image = getById('images', $post['image_id']);
+         $topic = getById('categories', $post['category_id']);
+        ?>
         <tr>
-            <td><img src="src/images/uploads/unsplash.jpg" class="avatar" alt="Avatar"></td>
-            <td><a href="#">Blog Title</a></td>
-            <td>12/08/2017</td>
+            <td><img src="src/admin/uploads/<?php echo $image['filename']; ?>" class="avatar" alt="Avatar"></td>
+            <td><a href="#"><?php echo $post['title']; ?></a></td>
+            <td><?php echo $topic['category_name']; ?></td>
+            <td><?php echo $post['created_at']; ?></td>
             <td>
                 <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
                         class="fa-solid fa-pen-to-square"></i></a>
@@ -36,28 +46,7 @@ if (isset($_POST['newpost'])) {
                         class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
-        <tr>
-            <td><img src="src/images/uploads/unsplash.jpg" class="avatar" alt="Avatar"></td>
-            <td><a href="#">Blog Title</a></td>
-            <td>12/08/2017</td>
-            <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="src/images/uploads/unsplash.jpg" class="avatar" alt="Avatar"></td>
-            <td><a href="#">Blog Title</a></td>
-            <td>12/08/2017</td>
-            <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
-            </td>
-        </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 </div>
