@@ -65,7 +65,6 @@ function checkLogin()
    
     validateUserInput($password,"", $username,"");
     userCredentials($username, $password);
-    echo $_SESSION['username'];
 }
 
 
@@ -132,11 +131,11 @@ function addNewPost() {
 function addNewImage() {
     if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {
         $tmp_filename = $_FILES['image']['tmp_name'];
-        $upload_dir = "./src/images/uploads/";
+        $upload_dir = "uploads/";
         $fileName = basename($_FILES['image']['name']);
 
         if(move_uploaded_file($tmp_filename, $upload_dir . $fileName)) {
-           echo "Filen har laddats upp.";
+            $_SESSION['success_msg'] = "File was sucessfully uploaded";
         } else {
             $error = $_FILES['image']['error'];
             $message = $upload_errors[$error];

@@ -23,11 +23,18 @@ if (isset($_POST['newimage'])) {
         </tr>
     </thead>
     <tbody>
+        <?php
+        $images = getUsersImages();
+        if(!$images) {
+            echo "No categories found";
+        }
+        foreach($images as $image):
+        ?>
+        <tr>
 
-        <tr>
-            <td><img src="src/images/uploads/unsplash.jpg" class="avatar" alt="Avatar"></td>
-            <td><a href="#">Descriptive text</a></td>
-            <td>12/08/2017</td>
+            <td><img src="src/admin/uploads/<?php echo $image['filename']; ?>" class="avatar" alt="Avatar"></td>
+            <td><?php echo $image['description']; ?></td>
+            <td><?php echo $image['created_at']; ?></td>
             <td>
                 <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
                         class="fa-solid fa-pen-to-square"></i></a>
@@ -35,28 +42,7 @@ if (isset($_POST['newimage'])) {
                         class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
-        <tr>
-            <td><img src="src/images/uploads/unsplash.jpg" class="avatar" alt="Avatar"></td>
-            <td><a href="#">Descriptive text</a></td>
-            <td>12/08/2017</td>
-            <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="src/images/uploads/unsplash.jpg" class="avatar" alt="Avatar"></td>
-            <td><a href="#">Descriptive text</a></td>
-            <td>12/08/2017</td>
-            <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
-            </td>
-        </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 </div>

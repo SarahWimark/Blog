@@ -36,8 +36,20 @@ include_once('../db/db_queries.php');
             </select>
         </div>
         <div class="form-group">
-            <label for="postimage" class="mt-3 mb-3">Image: </label>
-            <input type="file" class="form-control-file" id="postimage" name="postimage">
+            <label for="title" class="mt-2 mb-2">Image</label>
+            <select name="postimage" class="form-control" required>
+                <?php
+        $images = getUsersImages();
+        if(!$images) {
+            echo "No images found";
+        }
+        foreach($images as $image):
+        ?>
+                <option style="background-image:url('src/admin/uploads/<?php echo $image['filename']; ?>')"
+                    value="<?php echo $image['filename']; ?>">
+                </option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="newpost">

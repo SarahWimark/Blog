@@ -32,18 +32,28 @@ function insertNewUser($username, $email, $password) {
 
 function insertNewCategory($categoryName) {
     global $conn;
-    $sql = "INSERT INTO categories (category_name) VALUES (?)";
+    $sql = "INSERT INTO categories (category_name, userId) VALUES (?,?)";
     $stmt= $conn->prepare($sql);
-    $stmt->bind_param("s", $categoryName);
+    $stmt->bind_param("si", $categoryName, $_SESSION['userId']);
     $stmt->execute(); 
 }
 
 function insertNewImage($fileName, $description) {
     global $conn;
-    $sql = "INSERT INTO images (filename, description) VALUES (?,?)";
+    $sql = "INSERT INTO images (filename, description, userId) VALUES (?,?,?)";
     $stmt= $conn->prepare($sql);
-    $stmt->bind_param("ss", $fileName, $description);
+    $stmt->bind_param("ssi", $fileName, $description, $_SESSION['userId']);
     $stmt->execute(); 
+}
+
+function getUsersImages() {
+    global $conn;
+    $sql = "SELECT * FROM images WHERE userId=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $_SESSION["userId"]);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $result; 
 }
 
 function userCredentials($username, $password) {
@@ -86,4 +96,4 @@ function userCredentials($username, $password) {
 //     die();
 // }
 
-// printQueryResult(getById('users', 1));
+// printQueryResult(getUsersImages());
