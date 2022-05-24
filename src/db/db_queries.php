@@ -22,6 +22,26 @@ function getById($table, $id) {
     return $result;
 }
 
+function getImageId($filename) {
+    global $conn;
+    $sql = "SELECT id FROM images WHERE filename=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $filename);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
+    return $result; 
+}
+
+function getTopicId($categoryName) {
+    global $conn;
+    $sql = "SELECT id FROM categories WHERE filename=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $categoryName);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
+    return $result; 
+} 
+
 function insertNewUser($username, $email, $password) {
     global $conn;
     $sql = "INSERT INTO users (username, email, password) VALUES (?,?,?)";
@@ -55,6 +75,17 @@ function getUsersImages() {
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     return $result; 
 }
+
+function insertNewPost($title, $text, $topic, $image){
+    global $conn;
+    $imageId = getImageId($image);
+    $topicId = getTopicId($topic);
+    $userId = $_SESSION['userId'];
+    $sql = "INSERT INTO posts (title, text, user_id, category_id, image_id) VALUES (?,?,?,?,?)";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ssiii", $title, $text, $userId, $topicId, $imageId);
+    $stmt->execute(); 
+} 
 
 function userCredentials($username, $password) {
     global $conn;

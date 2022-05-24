@@ -122,11 +122,17 @@ function getCategories() {
 
 
 function addNewPost() {
-    if (isset($_POST['title']) && isset($_POST['text']) ) {
-        $_SESSION['error-msg'] = 'Enter a valid category name';
-           
-       } 
-} 
+    if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['posttopic']) && isset($_POST['postimage'])) {
+       $title = sanitize($_POST['title']);
+       $text = sanitize($_POST['text']);
+       $topic = sanitize($_POST['posttopic']);
+       $image = sanitize($_POST['postimage']);
+       insertNewPost($title, $text, $topic, $image);    
+       } else {
+        $_SESSION['error-msg'] = 'Enter valid credentials';
+       }
+}  
+
 
 function addNewImage() {
     if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {

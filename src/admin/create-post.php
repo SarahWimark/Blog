@@ -22,7 +22,7 @@ include_once('../db/db_queries.php');
         </div>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Topic</label>
-            <select name="posttopic" class="form-control" required>
+            <select is="ms-dropdown" name="posttopic" class="form-control" required>
                 <?php
         $categories = getCategories();
         if(!$categories) {
@@ -45,12 +45,16 @@ include_once('../db/db_queries.php');
         }
         foreach($images as $image):
         ?>
-                <option style="background-image:url('src/admin/uploads/<?php echo $image['filename']; ?>')"
-                    value="<?php echo $image['filename']; ?>">
+                <option value="<?php echo $image['filename']; ?>"><?php echo $image['filename']; ?>
                 </option>
                 <?php endforeach; ?>
             </select>
         </div>
+        <?php if(!empty($_POST['postimage'])){ 
+             $selected = $_POST['postImage']; 
+              ?>
+        <img src="src/admin/uploads/<?php echo $selected ?>">
+        <?php } ?>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="newpost">
                 Add new post <i class="fas fa-user-plus"></i></button>
