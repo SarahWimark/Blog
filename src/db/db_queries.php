@@ -87,6 +87,16 @@ function getUsersPosts() {
     return $result; 
 }
 
+function getUsersBlog() {
+    global $conn;
+    $sql = "SELECT * FROM blogs WHERE user_id=? LIMIT 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $_SESSION["userId"]);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $result; 
+}
+
 function insertNewPost($title, $text, $topic, $image){
     global $conn;
     $imageId = getImageId($image);
@@ -95,6 +105,16 @@ function insertNewPost($title, $text, $topic, $image){
     $sql = "INSERT INTO posts (title, text, user_id, category_id, image_id) VALUES (?,?,?,?,?)";
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ssiii", $title, $text, $userId, $topicId, $imageId);
+    $stmt->execute(); 
+} 
+
+function insertNewBlog($title, $text, $image){
+    global $conn;
+    $imageId = getImageId($image);
+    $userId = $_SESSION['userId'];
+    $sql = "INSERT INTO blogs (title, description, user_id, image_id) VALUES (?,?,?,?)";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ssii", $title, $text, $userId, $imageId);
     $stmt->execute(); 
 } 
 

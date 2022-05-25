@@ -25,9 +25,6 @@ include_once('../db/db_queries.php');
             <select is="ms-dropdown" name="posttopic" class="form-control" required>
                 <?php
         $categories = getCategories();
-        if(!$categories) {
-            echo "No categories found";
-        }
         foreach($categories as $category):
         ?>
                 <option value="<?php echo $category['category_name']; ?>"><?php echo $category['category_name']; ?>
@@ -40,9 +37,6 @@ include_once('../db/db_queries.php');
             <select name="postimage" class="form-control" required>
                 <?php
         $images = getUsersImages();
-        if(!$images) {
-            echo "No images found";
-        }
         foreach($images as $image):
         ?>
                 <option value="<?php echo $image['filename']; ?>"><?php echo $image['filename']; ?>
@@ -50,11 +44,6 @@ include_once('../db/db_queries.php');
                 <?php endforeach; ?>
             </select>
         </div>
-        <?php if(!empty($_POST['postimage'])){ 
-             $selected = $_POST['postImage']; 
-              ?>
-        <img src="src/admin/uploads/<?php echo $selected ?>">
-        <?php } ?>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="newpost">
                 Add new post <i class="fas fa-user-plus"></i></button>

@@ -26,7 +26,7 @@ if (isset($_POST['newimage'])) {
         <?php
         $images = getUsersImages();
         if(!$images) {
-            echo "No categories found";
+            echo "No images found";
         }
         foreach($images as $image):
         ?>

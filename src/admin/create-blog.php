@@ -7,8 +7,8 @@ include_once('../db/db_queries.php');
  ?>
 
 <div class="manage-buttons">
-    <a class="btn btn-success" href="src/admin/post.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
-        posts</a>
+    <a class="btn btn-success" href="src/admin/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
+        blogs</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="src/admin/blog.php" method="post" enctype="multipart/form-data">
