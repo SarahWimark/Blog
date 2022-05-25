@@ -1,6 +1,5 @@
 <?php define('TITLE', 'Welcome page'); ?>
 <?php include_once('./src/includes/header.php'); ?>
-<?php include_once('functions.php'); ?>
 
 <?php
  session_start();
@@ -22,6 +21,6 @@ if (isset($_POST['register'])) {
 
 <main>
     <?php include_once('./src/blog/includes/carousel.php'); ?>
-    <?php include_once('./src/blog/main.php'); ?>
+    <?php include_once('./src/blog/includes/main.php'); ?>
 </main>
 <?php include_once('./src/includes/footer.php'); ?>

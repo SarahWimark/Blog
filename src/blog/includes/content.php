@@ -1,5 +1,7 @@
 <?php define('TITLE', 'Blog page'); ?>
 <?php include_once('../../includes/header.php'); ?>
+<?php include_once('../../../functions.php'); ?>
+<?php include_once('../../db/db_queries.php'); ?>
 
 <main>
     <div class="content post-content clearfix">
@@ -53,7 +55,7 @@
                         explicabo at animi.</p>
                 </div>
             </section>
-            
+
             <section class="recent">
                 <h2 class="recent-title">Latests posts</h2>
                 <div class="recent-post clearfix">
@@ -84,18 +86,14 @@
             </section>
 
             <section class="categories">
-                <h2 class="categories-title">Categories</h2>
+                <h2 class="categories-title">Topics</h2>
                 <ul>
-                    <li><a href="">Category 1</a></li>
-                    <li><a href="">Category 2</a></li>
-                    <li><a href="">Category 3</a></li>
-                    <li><a href="">Category 4</a></li>
-                    <li><a href="">Category 5</a></li>
-                    <li><a href="">Category 6</a></li>
-                    <li><a href="">Category 7</a></li>
-                    <li><a href="">Category 8</a></li>
-                    <li><a href="">Category 9</a></li>
-                    <li><a href="">Category 10</a></li>
+                    <?php
+             $categories = getCategories();
+             foreach($categories as $category):
+             ?>
+                    <li><a href=""><?php echo $category['category_name'];?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </section>
         </aside>

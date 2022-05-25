@@ -1,7 +1,9 @@
+<?php include_once('../../../functions.php'); ?>
+<?php include_once('../../db/db_queries.php'); ?>
+
 <div class="content clearfix">
     <div class="all-bloggers-section">
         <h2 class="all-bloggers-section-title">All blogs</h2>
-
         <div class="blog-card">
             <img src="src/images/blogs/blog_header.png"
                 alt="A blog header image that says Explore the world and with a camera" class="blog-card-img left">
@@ -68,16 +70,13 @@
             </div>
         </div>
     </div>
-
     <aside class="sidebar left">
         <section class="search">
             <h2 class="search-title">Search blogs</h2>
-
             <form action="">
                 <input type="search" name="searchterm" class="search-input" placeholder="Search...">
             </form>
         </section>
-
         <section class="blog-info">
             <h2 class="blog-title">Newest blogger</h2>
             <hr>
@@ -92,22 +91,5 @@
                     explicabo at animi.</p>
             </div>
         </section>
-
-        <section class="categories">
-            <h2 class="categories-title">Categories</h2>
-            <ul>
-                <li><a href="">Category 1</a></li>
-                <li><a href="">Category 2</a></li>
-                <li><a href="">Category 3</a></li>
-                <li><a href="">Category 4</a></li>
-                <li><a href="">Category 5</a></li>
-                <li><a href="">Category 6</a></li>
-                <li><a href="">Category 7</a></li>
-                <li><a href="">Category 8</a></li>
-                <li><a href="">Category 9</a></li>
-                <li><a href="">Category 10</a></li>
-            </ul>
-        </section>
-
     </aside>
 </div>

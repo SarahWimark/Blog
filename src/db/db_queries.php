@@ -97,6 +97,16 @@ function getUsersBlog() {
     return $result; 
 }
 
+function getAllBlogs() {
+    global $conn;
+    $sql = "SELECT * FROM blogs ORDER BY created_at";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $_SESSION["userId"]);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $result; 
+}
+
 function insertNewPost($title, $text, $topic, $image){
     global $conn;
     $imageId = getImageId($image);
