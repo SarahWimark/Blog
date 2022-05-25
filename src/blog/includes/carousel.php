@@ -4,61 +4,26 @@
     <i class="fas fa-chevron-left prev"></i>
     <i class="fas fa-chevron-right next"></i>
     <div class="new-posts-container">
+        <?php
+        $posts = getAllPosts();
+        if(!$posts) {
+            echo "No posts found";
+        }
+        foreach($posts as $post):
+         $image = getById('images', $post['image_id']);
+         $user = getById('users', $post['user_id']);
+         $date = strtotime($post['created_at']);
+         $newDate = date('m/d/y - G:i', $date);
+        ?>
         <div class="new-post">
-            <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
+            <img src="src/admin/uploads/<?php echo $image['filename']; ?>" alt="<?php echo $image['description']; ?>"
                 class="carousel-img">
             <div class="post-info">
-                <h4><a href="#">Blog post title</a></h4>
-                <i class="far fa-user"> Blog post author</i> &nbsp;
-                <i class="far fa-calendar"> Mar 25, 2022</i>
+                <h4><a href="#"><?php echo $post['title']; ?></a></h4>
+                <i class="far fa-user"> <?php echo $user['username']; ?></i> &nbsp;
+                <i class="far fa-calendar"> <?php echo $newDate; ?></i>
             </div>
         </div>
-        <div class="new-post">
-            <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
-                class="carousel-img">
-            <div class="post-info">
-                <h4><a href="#">Blog post title</a></h4>
-                <i class="far fa-user"> Blog post author</i> &nbsp;
-                <i class="far fa-calendar"> Mar 25, 2022</i>
-            </div>
-        </div>
-        <div class="new-post">
-            <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
-                class="carousel-img">
-            <div class="post-info">
-                <h4><a href="#">Another blog post title</a></h4>
-                <i class="far fa-user"> Blog post author</i> &nbsp;
-                <i class="far fa-calendar"> Mar 25, 2022</i>
-            </div>
-        </div>
-        <div class="new-post">
-            <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
-                class="carousel-img">
-            <div class="post-info">
-                <h4><a href="#">Another blog post title</a></h4>
-                <i class="far fa-user"> Blog post author</i> &nbsp;
-                <i class="far fa-calendar"> Mar 25, 2022</i>
-            </div>
-        </div>
-        <div class="new-post">
-            <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
-                class="carousel-img">
-            <div class="post-info">
-                <h4><a href="#">Another blog post title</a></h4>
-                <i class="far fa-user"> Blog post author</i> &nbsp;
-                <i class="far fa-calendar"> Mar 25, 2022</i>
-            </div>
-        </div>
-        <div class="new-post">
-            <img src="src/images/uploads/unsplash.jpg" alt="An image of rocky mountains in a desert plain"
-                class="carousel-img">
-            <div class="post-info">
-                <h4><a href="#">Another blog post title</a></h4>
-                <i class="far fa-user"> Blog post author</i> &nbsp;
-                <i class="far fa-calendar"> Mar 25, 2022</i>
-            </div>
-        </div>
-
+        <?php endforeach; ?>
     </div>
-
 </div>

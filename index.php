@@ -5,11 +5,6 @@
 
 <?php
  session_start();
-// If there is no session redirect user to login page
-// if(!isset($_SESSION['username'])) {
-//     header("Location: login.php");
-//     exit();
-// }
 
 // Checks what button that was pressed and calls the approriate function
 if (isset($_POST['register'])) {

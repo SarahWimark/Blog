@@ -107,6 +107,15 @@ function getAllBlogs() {
     return $result;
 }
 
+function getAllPosts() {
+    global $conn;
+    $sql = "SELECT * FROM posts ORDER BY created_at DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $result;
+}
+
 function insertNewPost($title, $text, $topic, $image){
     global $conn;
     $imageId = getImageId($image);
