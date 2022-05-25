@@ -87,6 +87,7 @@ function getUsersPosts() {
     return $result; 
 }
 
+
 function getUsersBlog() {
     global $conn;
     $sql = "SELECT * FROM blogs WHERE user_id=? LIMIT 1";
@@ -99,12 +100,11 @@ function getUsersBlog() {
 
 function getAllBlogs() {
     global $conn;
-    $sql = "SELECT * FROM blogs ORDER BY created_at";
+    $sql = "SELECT * FROM blogs ORDER BY created_at DESC";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $_SESSION["userId"]);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-    return $result; 
+    return $result;
 }
 
 function insertNewPost($title, $text, $topic, $image){

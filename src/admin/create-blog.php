@@ -18,7 +18,7 @@ include_once('../db/db_queries.php');
         </div>
         <div class="form-group">
             <label for="blogtext" class="mt-2 mb-2">Blog description</label>
-            <textarea class="form-control" rows="10" id="blogtext" name="blogtext" required></textarea>
+            <textarea class="form-control" maxlength="250" id="blogtext" name="blogtext" required></textarea>
         </div>
         <div class="form-group">
             <label for="blogimage" class="mt-2 mb-2">Blog image</label>

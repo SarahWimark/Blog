@@ -1,5 +1,7 @@
 <?php define('TITLE', 'Welcome page'); ?>
 <?php include_once('./src/includes/header.php'); ?>
+<?php include_once('functions.php'); ?>
+<?php include_once('src/db/db_queries.php'); ?>
 
 <?php
  session_start();

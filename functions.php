@@ -120,7 +120,6 @@ function getCategories() {
     return $allCategories;
 }
 
-
 function addNewPost() {
     if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['posttopic']) && isset($_POST['postimage'])) {
        $title = sanitize($_POST['title']);
