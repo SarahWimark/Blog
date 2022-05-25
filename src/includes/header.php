@@ -28,7 +28,7 @@
     <div class="main_container">
         <header id="main-header">
             <div class="logo">
-                <h1 class="logo-title"><span>Alacer</span>Blogs</h1>
+                <h1 class="logo-title"><a href="index.php"><span>Alacer</span>Blogs</a></h1>
             </div>
             <nav>
                 <ul class="navigation">

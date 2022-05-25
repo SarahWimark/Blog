@@ -23,8 +23,6 @@
             <ul>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">All Bloggers</a></li>
-                <li><a href="#">All Blogs</a></li>
             </ul>
         </div>
         <div class="contact-form">
