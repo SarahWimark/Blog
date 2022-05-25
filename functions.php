@@ -133,6 +133,17 @@ function addNewPost() {
        }
 }  
 
+function addNewBlog() {
+    if (isset($_POST['blogtitle']) && isset($_POST['blogtext']) && isset($_POST['blogimage'])) {
+       $title = sanitize($_POST['blogtitle']);
+       $text = sanitize($_POST['blogtext']);
+       $image = sanitize($_POST['blogimage']);
+       insertNewBlog($title, $text, $image);    
+       } else {
+        $_SESSION['error-msg'] = 'Enter valid credentials';
+       }
+}  
+
 
 function addNewImage() {
     if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {
