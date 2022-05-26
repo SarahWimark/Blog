@@ -1,17 +1,17 @@
 <?php 
 define('TITLE', 'Create blog'); 
-include_once('../includes/header.php'); 
-include_once('./dashboard.php');
-include_once('../../functions.php');
-include_once('../db/db_queries.php');
+include_once('../../includes/header.php'); 
+include_once('../dashboard.php');
+include_once('../../../functions.php');
+include_once('../../db/db_queries.php');
  ?>
 
 <div class="manage-buttons">
-    <a class="btn btn-success" href="src/admin/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
+    <a class="btn btn-success" href="src/admin/blog/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
         blogs</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
-    <form action="src/admin/blog.php" method="post" enctype="multipart/form-data">
+    <form action="src/admin/blog/blog.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="blogtitle" class="mt-2 mb-2"> Blog title</label>
             <input type="text" class="form-control" id="blogtitle" name="blogtitle" required>
@@ -44,4 +44,4 @@ include_once('../db/db_queries.php');
 
 </div>
 </div>
-<?php include_once('../includes/footer-small.php'); ?>
+<?php include_once('../../includes/footer-small.php');

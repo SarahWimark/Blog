@@ -47,7 +47,7 @@
                                 class="fa fa-chevron-down"></i></a>
 
                         <ul class="sub-navigation bg-secondary">
-                            <li><a href="src/admin/post.php">Dashboard</a></li>
+                            <li><a href="src/admin/post/post.php">Dashboard</a></li>
                             <li><a href="index.php?logout=true">Logout</a></li>
                         </ul>
                     </li>

@@ -1,13 +1,15 @@
-<?php define('TITLE', 'Upload image'); ?>
-<?php include_once('../includes/header.php'); ?>
+<?php
+define('TITLE', 'Upload image'); 
+include_once('../../includes/header.php'); 
+include_once('../dashboard.php');
+?>
 
-<?php include_once('./dashboard.php'); ?>
 <div class="manage-buttons">
-    <a class="btn btn-success" href="src/admin/image.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
+    <a class="btn btn-success" href="src/admin/image/image.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
         images</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
-    <form action="src/admin/image.php" method="post" enctype="multipart/form-data">
+    <form action="src/admin/image/image.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="imagedesc" class="mt-2 mb-2">Image description</label>
             <input type="text" class="form-control" id="imagedesc" name="imagedesc">
@@ -25,4 +27,4 @@
 </div>
 
 </div>
-<?php include_once('../includes/footer-small.php'); ?>
+<?php include_once('../../includes/footer-small.php'); ?>

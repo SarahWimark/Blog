@@ -1,27 +1,27 @@
 <?php 
 define('TITLE', 'Edit blog'); 
-include_once('../includes/header.php'); 
-include_once('./dashboard.php');
-include_once('../../functions.php');
-include_once('../db/db_queries.php');
+include_once('../../includes/header.php'); 
+include_once('../dashboard.php');
+include_once('../../../functions.php');
+include_once('../../db/db_queries.php');
 
 if(isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
     echo $id;
     $blog = getById('blogs', $id);
     if($blog['user_id'] != $_SESSION['userId']) {
-        header("Location: ../../index.php");
+        header("Location: ../../../index.php");
         exit();  
     }
 } 
  ?>
 
 <div class="manage-buttons">
-    <a class="btn btn-success" href="src/admin/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
+    <a class="btn btn-success" href="src/admin/blog/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
         blogs</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
-    <form action="src/admin/blog.php" method="post" enctype="multipart/form-data">
+    <form action="src/admin/blog/blog.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="blogtitle" class="mt-2 mb-2"> Blog title</label>
             <input type="text" value="<?php echo $blog['title']; ?>" class="form-control" id="blogtitle"
@@ -56,4 +56,4 @@ if(isset($_GET['id'])) {
 
 </div>
 </div>
-<?php include_once('../includes/footer-small.php'); ?>
+<?php include_once('../../includes/footer-small.php');
