@@ -34,13 +34,15 @@ if(!$blogs) {
         ?>
         <tr>
             <td><img src="src/admin/uploads/<?php echo $image['filename']; ?>" class="avatar" alt="Avatar"></td>
-            <td><a href="#"><?php echo $blog['title']; ?></a></td>
+            <td><a
+                    href="../../blog/includes/content.php?id=<?php echo $blog['id']; ?>"><?php echo $blog['title']; ?></a>
+            </td>
             <td><?php echo $blog['description']; ?></td>
             <td>
                 <a href="src/admin/edit-blog.php?id=<?php echo $blog['id']; ?>" class="settings" title="Edit"
                     data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
+                <a href="src/admin/blog.php?id=<?php echo $blog['id']; ?>" class="delete" title="Delete"
+                    data-toggle="tooltip"><i class="fa-solid fa-trash-can" name="delete"></i></a>
             </td>
         </tr>
         <?php endforeach; ?>

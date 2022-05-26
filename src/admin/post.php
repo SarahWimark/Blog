@@ -36,14 +36,15 @@ if (isset($_POST['newpost'])) {
         ?>
         <tr>
             <td><img src="src/admin/uploads/<?php echo $image['filename']; ?>" class="avatar" alt="Avatar"></td>
-            <td><a href="#"><?php echo $post['title']; ?></a></td>
+            <td><a href="src/blog/includes/content.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a>
+            </td>
             <td><?php echo $topic['category_name']; ?></td>
             <td><?php echo $post['created_at']; ?></td>
             <td>
                 <a href="src/admin/edit-post.php?id=<?php echo $post['id']; ?>" class="settings" title="Edit"
                     data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                        class="fa-solid fa-trash-can"></i></a>
+                <a href="src/admin/post.php?id=<?php echo $post['id']; ?>" class="delete" title="Delete"
+                    data-toggle="tooltip"><i class="fa-solid fa-trash-can" name="delete"></i></a>
             </td>
         </tr>
         <?php endforeach; ?>
