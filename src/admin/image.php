@@ -36,8 +36,8 @@ if (isset($_POST['newimage'])) {
             <td><?php echo $image['description']; ?></td>
             <td><?php echo $image['created_at']; ?></td>
             <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
+                <a href="src/admin/edit-image.php?id=<?php echo $image['id']; ?>" class="settings" title="Edit"
+                    data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
                         class="fa-solid fa-trash-can"></i></a>
             </td>

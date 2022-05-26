@@ -69,7 +69,7 @@ function insertNewImage($fileName, $description) {
 
 function getUsersImages() {
     global $conn;
-    $sql = "SELECT * FROM images WHERE userId=? ORDER BY created_at desc";
+    $sql = "SELECT * FROM images WHERE user_id=? ORDER BY created_at desc";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $_SESSION["userId"]);
     $stmt->execute();

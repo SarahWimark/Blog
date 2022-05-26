@@ -37,8 +37,8 @@ if(!$blogs) {
             <td><a href="#"><?php echo $blog['title']; ?></a></td>
             <td><?php echo $blog['description']; ?></td>
             <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
+                <a href="src/admin/edit-blog.php?id=<?php echo $blog['id']; ?>" class="settings" title="Edit"
+                    data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
                         class="fa-solid fa-trash-can"></i></a>
             </td>

@@ -40,8 +40,8 @@ if (isset($_POST['newpost'])) {
             <td><?php echo $topic['category_name']; ?></td>
             <td><?php echo $post['created_at']; ?></td>
             <td>
-                <a href="#" class="settings" title="Edit" data-toggle="tooltip"><i
-                        class="fa-solid fa-pen-to-square"></i></a>
+                <a href="src/admin/edit-post.php?id=<?php echo $post['id']; ?>" class="settings" title="Edit"
+                    data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
                         class="fa-solid fa-trash-can"></i></a>
             </td>
