@@ -10,7 +10,6 @@ if (isset($_POST['newimage'])) {
   addNewImage();
 } else if (isset($_GET['delete']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
     $image = getById('images', $id);
     if($image['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
@@ -20,8 +19,7 @@ if (isset($_POST['newimage'])) {
     }
 }else if (isset($_POST['updateimage']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
-    $post = getById('images', $id);
+    $image = getById('images', $id);
     if($image['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
         exit();  

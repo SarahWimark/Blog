@@ -8,9 +8,8 @@ include_once('../../db/db_queries.php');
 <?php
 if (isset($_POST['newblog'])) {
     addNewBlog();
-} else if (isset($_POST['delete']) && isset($_GET['id'])) {
+} else if (isset($_GET['delete']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
     $blog = getById('blogs', $id);
     if($blog['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
@@ -61,8 +60,8 @@ if(!$blogs) {
             <td>
                 <a href="src/admin/blog/edit-blog.php?id=<?php echo $blog['id']; ?>" class="settings" title="Edit"
                     data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="src/admin/blog/blog.php?id=<?php echo $blog['id']; ?>" class="delete" title="Delete"
-                    data-toggle="tooltip"><i class="fa-solid fa-trash-can" name="delete"></i></a>
+                <a href="src/admin/blog/blog.php?id=<?php echo $blog['id']; ?>&delete=true" class="delete"
+                    title="Delete" data-toggle="tooltip"><i class="fa-solid fa-trash-can" name="delete"></i></a>
             </td>
         </tr>
         <?php endforeach; ?>

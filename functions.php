@@ -153,4 +153,13 @@ function addNewImage() {
          $_SESSION['error-msg'] = 'Enter valid credentials';
     }   
 } 
+
+function deleteBlog($id){
+    $posts = getUsersPosts();
+    if(!$posts){
+        delete('blogs', $id);
+    } else {
+        echo "Remove all posts that this blog contains first";
+    }
+}
 ?>

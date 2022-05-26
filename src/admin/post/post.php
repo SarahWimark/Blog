@@ -6,9 +6,9 @@ include_once('../../db/db_queries.php');
 ?>
 
 <?php
-if (isset($_POST['newpost'])) {
+if (isset($_POST['newpost'])) { 
     addNewPost();
-} else if (isset($_POST['delete']) && isset($_GET['id'])) {
+} else if (isset($_GET['delete']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
     echo $id;
     $post = getById('posts', $id);
@@ -29,11 +29,16 @@ if (isset($_POST['newpost'])) {
         updatePost($id);
     }
 }
-?>
 
+$blog = getUsersBlog();
+
+if($blog) { ?>
 <div class="manage-buttons">
-    <a class="btn btn-secondary" href="src/admin/post/create-post.php"> <i class="fas fa-plus"></i> Add new post</a>
+    <a class="btn btn-secondary" href="src/admin/post/create-post.php"> <i class="fas fa-plus"></i> Create post</a>
 </div>
+<?php } else {
+    echo "Create a blog to start adding posts.";
+} ?>
 <table class="table mt-3 table-striped table-hover">
     <thead>
         <tr>
@@ -63,8 +68,8 @@ if (isset($_POST['newpost'])) {
             <td>
                 <a href="src/admin/post/edit-post.php?id=<?php echo $post['id']; ?>" class="settings" title="Edit"
                     data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="src/admin/post/post.php?id=<?php echo $post['id']; ?>" class="delete" title="Delete"
-                    data-toggle="tooltip"><i class="fa-solid fa-trash-can" name="delete"></i></a>
+                <a href="src/admin/post/post.php?id=<?php echo $post['id']; ?>&delete=true" class="delete"
+                    title="Delete" data-toggle="tooltip"><i class="fa-solid fa-trash-can" name="delete"></i></a>
             </td>
         </tr>
         <?php endforeach; ?>
