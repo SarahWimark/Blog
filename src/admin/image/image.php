@@ -17,14 +17,15 @@ if (isset($_POST['newimage'])) {
     } else {
         delete('images', $id);
     }
-}else if (isset($_POST['updateimage']) && isset($_GET['id'])) {
+} else if (isset($_POST['updateimage']) && isset($_POST['imagedesc']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
+    $description = sanitize($_POST['imagedesc']);
     $image = getById('images', $id);
     if($image['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
         exit();  
     } else {
-        updateImage($id);
+        updateImage($id,$description);
     }
 }
 ?>

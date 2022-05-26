@@ -66,11 +66,20 @@ function insertNewUser($username, $email, $password) {
     $stmt->close();
 }
 
-function insertNewImage($fileName, $description) {
+function insertNewImage($description) {
     global $conn;
     $sql = "INSERT INTO images (filename, description, user_id) VALUES (?,?,?)";
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ssi", $fileName, $description, $_SESSION['userId']);
+    $stmt->execute(); 
+    $stmt->close();
+}
+
+function updateImage($id, $description) {
+    global $conn;
+    $sql = "UPDATE images SET description=? WHERE id=?";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("si", $description, $id);
     $stmt->execute(); 
     $stmt->close();
 }
@@ -141,6 +150,15 @@ function insertNewPost($title, $text, $topic, $image){
     $stmt->close();
 }  
 
+function updatePost($title, $text, $id) {
+    global $conn;
+    $sql = "UPDATE posts SET title=?, text=? WHERE id=?";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ssi", $title, $text, $id);
+    $stmt->execute(); 
+    $stmt->close();
+}
+
 function insertNewBlog($title, $text, $image){
     global $conn;
     $imageId = getImageId($image);
@@ -151,6 +169,15 @@ function insertNewBlog($title, $text, $image){
     $stmt->execute(); 
     $stmt->close();
 } 
+
+function updateBlog($title, $description, $imageId, $id) {
+    global $conn;
+    $sql = "UPDATE blogs SET title=?, description=?, image_id=? WHERE id=?";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ssii", $title, $description, $imageId, $id);
+    $stmt->execute(); 
+    $stmt->close();
+}
 
 function userCredentials($username, $password) {
     global $conn;

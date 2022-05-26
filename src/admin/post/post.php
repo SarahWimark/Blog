@@ -10,7 +10,6 @@ if (isset($_POST['newpost'])) {
     addNewPost();
 } else if (isset($_GET['delete']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
     $post = getById('posts', $id);
     if($post['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
@@ -18,15 +17,16 @@ if (isset($_POST['newpost'])) {
     } else {
         delete('posts', $id);
     }
-} else if (isset($_POST['updatepost']) && isset($_GET['id'])) {
+} else if (isset($_POST['updatepost']) && isset($_GET['id']) && isset($_POST['title']) && isset($_POST['text'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
+    $title = sanitize($_POST['title']);
+    $text = sanitize($_POST['text']);
     $post = getById('posts', $id);
     if($post['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
         exit();  
     } else {
-        updatePost($id);
+        updatePost($title, $text, $id);
     }
 }
 

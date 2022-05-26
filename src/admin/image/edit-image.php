@@ -21,7 +21,7 @@ include_once('../../db/db_queries.php');
         images</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
-    <form action="src/admin/image/image.php" method="post" enctype="multipart/form-data">
+    <form action="src/admin/image/image.php?id=<?php echo $image['id']; ?>" method="post">
         <div class="form-group">
             <label for="imagedesc" class="mt-2 mb-2">Image description</label>
             <input type="text" value="<?php echo $image['description']; ?>" class="form-control" id="imagedesc"

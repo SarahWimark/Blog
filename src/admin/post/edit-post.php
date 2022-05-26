@@ -22,7 +22,7 @@ if(isset($_GET['id'])) {
         posts</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
-    <form action="src/admin/post/post.php" method="post" enctype="multipart/form-data">
+    <form action="src/admin/post/post.php?id=<?php echo $post['id']; ?>" method="post">
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Title</label>
             <input type="text" value="<?php echo $post['title'];?>" class="form-control" id="title" name="title"

@@ -17,15 +17,18 @@ if (isset($_POST['newblog'])) {
     } else {
         deleteBlog($id);
     }
-}else if (isset($_POST['updateblog']) && isset($_GET['id'])) {
+}else if (isset($_POST['updateblog']) && isset($_POST['blogtitle']) && isset($_POST['blogtext']) && isset($_POST['blogimage'])&& isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
+    $title = sanitize($_POST['blogtitle']);
+    $description = sanitize($_POST['blogtext']);
+    $filename = sanitize($_POST['blogimage']);
+    $imageId = getImageId($filename);
     $blog = getById('blogs', $id);
     if($blog['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
         exit();  
     } else {
-        updateBlog($id);
+        updateBlog($title, $description, $imageId, $id);
     }
 }
 
