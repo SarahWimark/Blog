@@ -10,6 +10,7 @@ function getAllFromTable($table) {
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
     return $result;
 }
 
@@ -20,6 +21,17 @@ function getById($table, $id) {
     $stmt->bind_param('i', $id);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    return $result;
+}
+
+function delete($table, $id) {
+    global $conn;
+    $sql = "DELETE FROM $table WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    $stmt->close();
     return $result;
 }
 
@@ -30,6 +42,7 @@ function getImageId($filename) {
     $stmt->bind_param('s', $filename);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
     return $result['id']; 
 }
 
@@ -40,6 +53,7 @@ function getTopicId($categoryName) {
     $stmt->bind_param('s', $categoryName);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
     return $result['id'];  
 } 
 
@@ -49,22 +63,16 @@ function insertNewUser($username, $email, $password) {
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("sss", $username, $email, $password);
     $stmt->execute();
-}
-
-function insertNewCategory($categoryName) {
-    global $conn;
-    $sql = "INSERT INTO categories (category_name, userId) VALUES (?,?)";
-    $stmt= $conn->prepare($sql);
-    $stmt->bind_param("si", $categoryName, $_SESSION['userId']);
-    $stmt->execute(); 
+    $stmt->close();
 }
 
 function insertNewImage($fileName, $description) {
     global $conn;
-    $sql = "INSERT INTO images (filename, description, userId) VALUES (?,?,?)";
+    $sql = "INSERT INTO images (filename, description, user_id) VALUES (?,?,?)";
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ssi", $fileName, $description, $_SESSION['userId']);
     $stmt->execute(); 
+    $stmt->close();
 }
 
 function getUsersImages() {
@@ -74,6 +82,7 @@ function getUsersImages() {
     $stmt->bind_param('i', $_SESSION["userId"]);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
     return $result; 
 }
 
@@ -84,8 +93,9 @@ function getUsersPosts() {
     $stmt->bind_param('i', $_SESSION["userId"]);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
     return $result; 
-}
+} 
 
 
 function getUsersBlog() {
@@ -95,6 +105,7 @@ function getUsersBlog() {
     $stmt->bind_param('i', $_SESSION["userId"]);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
     return $result; 
 }
 
@@ -104,6 +115,7 @@ function getAllBlogs() {
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
     return $result;
 }
 
@@ -113,8 +125,9 @@ function getAllPosts() {
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
     return $result;
-}
+} 
 
 function insertNewPost($title, $text, $topic, $image){
     global $conn;
@@ -125,7 +138,8 @@ function insertNewPost($title, $text, $topic, $image){
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ssiii", $title, $text, $userId, $topicId, $imageId);
     $stmt->execute(); 
-} 
+    $stmt->close();
+}  
 
 function insertNewBlog($title, $text, $image){
     global $conn;
@@ -135,6 +149,7 @@ function insertNewBlog($title, $text, $image){
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ssii", $title, $text, $userId, $imageId);
     $stmt->execute(); 
+    $stmt->close();
 } 
 
 function userCredentials($username, $password) {
@@ -172,9 +187,3 @@ function userCredentials($username, $password) {
         $stmt->close();
 }
    
-/*   function printQueryResult($result) {
-     echo "<pre>",print_r($result, true),"</pre>";
-     die();
-}
-
- printQueryResult(getById($images, 22));  */

@@ -8,7 +8,7 @@ include_once('../../db/db_queries.php');
 <?php
 if (isset($_POST['newimage'])) {
   addNewImage();
-} else if (isset($_POST['delete']) && isset($_GET['id'])) {
+} else if (isset($_GET['delete']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
     echo $id;
     $image = getById('images', $id);
@@ -52,14 +52,15 @@ if (isset($_POST['newimage'])) {
         ?>
         <tr>
 
-            <td><img src="src/admin/uploads/<?php echo $image['filename']; ?>" class="avatar" alt="Avatar"></td>
+            <td><img src="src/admin/uploads/<?php echo $image['filename']; ?>" class="avatar"
+                    alt="<?php echo $image['description']; ?>"></td>
             <td><?php echo $image['description']; ?></td>
             <td><?php echo $image['created_at']; ?></td>
             <td>
                 <a href="src/admin/image/edit-image.php?id=<?php echo $image['id']; ?>" class="settings" title="Edit"
                     data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="src/admin/image/image.php?id=<?php echo $image['id']; ?>" class="delete" title="Delete"
-                    data-toggle="tooltip" name="delete"><i class="fa-solid fa-trash-can"></i></a>
+                <a href="src/admin/image/image.php?id=<?php echo $image['id']; ?>&delete=true" class="delete"
+                    title="Delete" data-toggle="tooltip" name="delete"><i class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
         <?php endforeach; ?>

@@ -105,16 +105,6 @@ function sanitize($data){
     return $data;
 }
 
-function addNewCategory() {
-       if (!isset($_POST['categoryname']) && empty($_POST['categoryname']) ) {
-        $_SESSION['error-msg'] = 'Enter a valid category name';
-           
-       } else {
-        $categoryName = sanitize($_POST['categoryname']);
-        insertNewCategory($categoryName);
-    }
-}
-
 function getCategories() {
     $allCategories = getAllFromTable('categories');
     return $allCategories;
@@ -147,7 +137,7 @@ function addNewBlog() {
 function addNewImage() {
     if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {
         $tmp_filename = $_FILES['image']['tmp_name'];
-        $upload_dir = "uploads/";
+        $upload_dir = "../uploads/";
         $fileName = basename($_FILES['image']['name']);
 
         if(move_uploaded_file($tmp_filename, $upload_dir . $fileName)) {
