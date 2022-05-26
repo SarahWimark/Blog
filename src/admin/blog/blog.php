@@ -31,7 +31,6 @@ if (isset($_POST['newblog'])) {
         updateBlog($title, $description, $imageId, $id);
     }
 }
-
 $blogs = getUsersBlog();
 if(!$blogs) {
     echo "No blog found"; ?>
