@@ -66,7 +66,7 @@ function insertNewUser($username, $email, $password) {
     $stmt->close();
 }
 
-function insertNewImage($description) {
+function insertNewImage($fileName, $description) {
     global $conn;
     $sql = "INSERT INTO images (filename, description, user_id) VALUES (?,?,?)";
     $stmt= $conn->prepare($sql);
@@ -95,11 +95,11 @@ function getUsersImages() {
     return $result; 
 }
 
-function getUsersPosts() {
+function getUsersPosts($id) {
     global $conn;
     $sql = "SELECT * FROM posts WHERE user_id=? ORDER BY created_at desc";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $_SESSION["userId"]);
+    $stmt->bind_param('i', $id);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
@@ -107,11 +107,11 @@ function getUsersPosts() {
 } 
 
 
-function getUsersBlog() {
+function getUsersBlog($id) {
     global $conn;
     $sql = "SELECT * FROM blogs WHERE user_id=? LIMIT 1";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $_SESSION["userId"]);
+    $stmt->bind_param('i', $id);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     $stmt->close();

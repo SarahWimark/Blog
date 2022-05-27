@@ -30,7 +30,7 @@ if (isset($_POST['newpost'])) {
     }
 }
 
-$blog = getUsersBlog();
+$blog = getUsersBlog($_SESSION['userId']);
 
 if($blog) { ?>
 <div class="manage-buttons">
@@ -51,7 +51,7 @@ if($blog) { ?>
     </thead>
     <tbody>
         <?php
-        $posts = getUsersPosts();
+        $posts = getUsersPosts($_SESSION['userId']);
         if(!$posts) {
             echo "No posts found";
         }

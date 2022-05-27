@@ -31,7 +31,7 @@ if (isset($_POST['newblog'])) {
         updateBlog($title, $description, $imageId, $id);
     }
 }
-$blogs = getUsersBlog();
+$blogs = getUsersBlog($_SESSION['userId']);
 if(!$blogs) {
     echo "No blog found"; ?>
 <div class="manage-buttons">

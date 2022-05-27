@@ -224,6 +224,7 @@
   background: rgba(255, 255, 255, 0.5);
   float: left;
   border-radius: 6px;
+  margin-bottom: 20px;
 }
 
 .post-sidebar {
