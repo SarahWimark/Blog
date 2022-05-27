@@ -163,3 +163,9 @@ table.table .avatar {
   margin-top: 10px;
   font-size: 13px;
 }
+
+.create-post-image {
+  width: 70px;
+  height: 50px;
+  margin: 10px;
+}

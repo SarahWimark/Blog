@@ -34,7 +34,7 @@ include_once('../../db/db_queries.php');
         </div>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Image</label>
-            <select id="postimage" onchange="findmyvalue()" gename="postimage" class="form-control" required>
+            <select id="postimage" onchange="showImage()" gename="postimage" class="form-control" required>
                 <?php
         $images = getUsersImages();
         foreach($images as $image):
@@ -45,11 +45,22 @@ include_once('../../db/db_queries.php');
             </select>
         </div>
         <script type="text/javascript">
-        function findmyvalue() {
-            var myval = document.getElementById("postimage").value;
-            
+        function showImage() {
+            const div = document.getElementById('image');
+            var value = document.getElementById("postimage").value;
+            const img = document.createElement('img');
+            img.className = 'create-post-image';
+            img.src = `src/admin/uploads/${value}`;
+            if (!div.hasChildNodes()) {
+                div.appendChild(img);
+            } else {
+                div.removeChild(img);
+            }
+
+
         }
         </script>
+        <div id="image" class="imageDiv"></div>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="newpost">
                 Add new post <i class="fas fa-user-plus"></i></button>
