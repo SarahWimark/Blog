@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".new-posts-container").slick({
+  /*  $(".new-posts-container").slick({
     slidesToShow: 5,
     slidesToScroll: 5,
     nextArrow: $(".next"),
@@ -34,11 +34,9 @@ $(document).ready(function () {
         },
       },
     ],
-  });
+  }); */
 
-  /* $(".new-posts-container").slick({
-    centerMode: true,
-    centerPadding: "60px",
+  $(".new-posts-container").slick({
     slidesToShow: 3,
     nextArrow: $(".next"),
     prevArrow: $(".prev"),
@@ -62,5 +60,5 @@ $(document).ready(function () {
         },
       },
     ],
-  }); */
+  });
 });
