@@ -4,14 +4,20 @@ include_once('../../includes/header.php');
 include_once('../../../functions.php'); 
 include_once('../../db/db_queries.php'); 
 
-if(isset($_GET['id']) && isset($_GET['blog'])) {
+if(isset($_GET['id']) && isset($_GET['all'])) {
     $id = sanitize($_GET['id']);
     $blog = getById('blogs', $id);
-    $image = getById('images', $blog['image_id']);
+    $blogImage = getById('images', $blog['image_id']);
     $user = getById('users', $blog['user_id']);
     $posts = getUsersPosts($blog['user_id']);
+} else if(isset($_GET['id']) && isset($_GET['single'])) {
+    $id = sanitize($_GET['id']);
+    $post = getById('posts', $id);
+    $image = getById('images', $post['image_id']);
+    $user = getById('users', $post['user_id']);
+    $blog = getUsersBlog($user['id'])[0]; 
+    $blogImage = getbyId('images', $blog['image_id']);
 } 
-
 
 ?>
 
@@ -23,13 +29,14 @@ if(isset($_GET['id']) && isset($_GET['blog'])) {
                 <h2 class="blog-title"><?php echo $user['username'];?></h2>
                 <hr>
                 <div class="blogger-info">
-                    <img src="src/admin/uploads/<?php echo $image['filename']; ?>"
-                        alt="<?php echo $image['description']; ?>">
+                    <img src="src/admin/uploads/<?php echo $blogImage['filename']; ?>"
+                        alt="<?php echo $blogImage['description']; ?>">
                     <hr>
                     <p class="blog-decription"><?php echo $blog['description']; ?></p>
                 </div>
             </section>
-
+            <?php 
+            if(isset($_GET['all'])) { ?>
             <section class="recent clearfix ">
                 <h2 class="recent-title">Latests posts</h2>
                 <?php
@@ -39,12 +46,22 @@ if(isset($_GET['id']) && isset($_GET['blog'])) {
                 <div class="recent-post clearfix">
                     <img src="src/admin/uploads/<?php echo $postImage['filename']; ?>"
                         alt="<?php echo $postImage['description']; ?>" class="left">
-                    <a href="#" class="recent-link"><?php echo $post['title']; ?></a>
+                    <a href="src/blog/includes/content.php?id=<?php echo $post['id']; ?>&single=true"
+                        class="recent-link"><?php echo $post['title']; ?></a>
                 </div>
                 <?php endforeach; ?>
             </section>
+            <?php } else {?>
+            <div class="manage-buttons">
+                <a class="btn btn-success" href="src/blog/includes/content.php?id=<?php echo $blog['id']; ?>&all=true">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to blog</a>
+            </div>
+            <?php } ?>
         </aside>
+
         <?php
+        if(isset($_GET['all'])) {
         foreach($posts as $post):
             $postimage = getById('images', $post['image_id']);
         ?>
@@ -57,7 +74,22 @@ if(isset($_GET['id']) && isset($_GET['blog'])) {
                 <p><?php echo $post['text']; ?></p>
             </div>
         </div>
-        <?php endforeach; ?>
+        <?php endforeach; }?>
+        <?php
+        if(isset($_GET['single'])) {
+           $postimage = getById('images', $post['image_id']);
+        ?>
+
+        <div class="blog-post-section">
+            <h2 class="post-title"><?php echo $post['title']; ?></h2>
+            <div class="post-content">
+                <img src="src/admin/uploads/<?php echo $postimage['filename']; ?>"
+                    alt="<?php echo $image['description']; ?>" class="post-image">
+                <p><?php echo $post['text']; ?></p>
+            </div>
+        </div>
+        <?php } ?>
+
 
 
 

@@ -15,7 +15,7 @@
                 <p class="blog-card-description"><?php echo $blog['description']; ?></p>
                 <i class="far fa-user"> <?php echo $user['username']; ?></i>
                 <div>
-                    <a href="src/blog/includes/content.php?id=<?php echo $blog['id']; ?>&blog=true"
+                    <a href="src/blog/includes/content.php?id=<?php echo $blog['id']; ?>&all=true"
                         class="btn btn-outline-secondary blog-card-btn" role="button" aria-pressed="true">Go to
                         blog <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
@@ -41,7 +41,7 @@
                 <img src="src/admin/uploads/<?php echo $image['filename'];?>" alt="<?php echo $image['description'];?>">
                 <hr>
                 <a class="blogger-name"
-                    href="src/blog/includes/content.php?id=<?php echo $blogs[0]['id']; ?>&blog=true"><?php echo $user['username']; ?></a>
+                    href="src/blog/includes/content.php?id=<?php echo $blogs[0]['id']; ?>&all=true"><?php echo $user['username']; ?></a>
                 <p class="blog-decription"><?php echo $blogs[0]['description'];?></p>
             </div>
         </section>

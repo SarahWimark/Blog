@@ -208,6 +208,7 @@
 .post-content {
   margin-top: 30px;
   font-family: "Lato", "sans-serif";
+  text-align: center;
 }
 
 .post-title {
@@ -219,7 +220,7 @@
 
 .blog-post-section {
   font-size: 1.1rem;
-  padding: 20px 30px;
+  padding: 20px;
   width: 68%;
   background: rgba(255, 255, 255, 0.5);
   float: left;
@@ -232,11 +233,12 @@
 }
 
 .post-image {
-  margin: 20px 0;
   height: 400px;
-  width: 100%;
+  width: 90%;
   object-fit: cover;
   box-shadow: 4px 5px 5px #444;
+  margin-bottom: 30px;
+  border-radius: 6px;
 }
 
 .recent-post {
