@@ -15,7 +15,7 @@
                 <p class="blog-card-description"><?php echo $blog['description']; ?></p>
                 <i class="far fa-user"> <?php echo $user['username']; ?></i>
                 <div>
-                    <a href="src/blog/includes/content.php?id=<?php echo $blogs[0]['id']; ?>&blog=true"
+                    <a href="src/blog/includes/content.php?id=<?php echo $blog['id']; ?>&blog=true"
                         class="btn btn-outline-secondary blog-card-btn" role="button" aria-pressed="true">Go to
                         blog <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
