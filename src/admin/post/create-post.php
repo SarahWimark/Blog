@@ -34,7 +34,7 @@ include_once('../../db/db_queries.php');
         </div>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Image</label>
-            <select name="postimage" class="form-control" required>
+            <select id="postimage" onchange="findmyvalue()" gename="postimage" class="form-control" required>
                 <?php
         $images = getUsersImages();
         foreach($images as $image):
@@ -44,6 +44,12 @@ include_once('../../db/db_queries.php');
                 <?php endforeach; ?>
             </select>
         </div>
+        <script type="text/javascript">
+        function findmyvalue() {
+            var myval = document.getElementById("postimage").value;
+            
+        }
+        </script>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="newpost">
                 Add new post <i class="fas fa-user-plus"></i></button>

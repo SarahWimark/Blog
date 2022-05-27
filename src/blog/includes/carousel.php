@@ -19,7 +19,9 @@
             <img src="src/admin/uploads/<?php echo $image['filename']; ?>" alt="<?php echo $image['description']; ?>"
                 class="carousel-img">
             <div class="post-info">
-                <h4><a href="#"><?php echo $post['title']; ?></a></h4>
+                <h4><a
+                        href="src/blog/includes/content.php?id=<?php echo $post['id']; ?>&single=true"><?php echo $post['title']; ?></a>
+                </h4>
                 <i class="far fa-user"> <?php echo $user['username']; ?></i> &nbsp;
                 <i class="far fa-calendar"> <?php echo $newDate; ?></i>
             </div>

@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap"
         rel="stylesheet">
     <base href="http://localhost/Projekt/blog/" />
+    <script src="src/js/script.js" defer></script>
     <link rel="stylesheet" href="src/styles/header.css">
     <link rel="stylesheet" href="src/styles/footer.css">
     <link rel="stylesheet" href="src/styles/blog.css">
