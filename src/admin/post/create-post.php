@@ -47,15 +47,16 @@ include_once('../../db/db_queries.php');
         <script type="text/javascript">
         function showImage() {
             const div = document.getElementById('image');
-            var value = document.getElementById("postimage").value;
+            if (div.hasChildNodes()) {
+                let imgages = div.getElementsByTagName('img');
+                div.removeChild(imgages[0]);
+            }
+            let value = document.getElementById("postimage").value;
             const img = document.createElement('img');
             img.className = 'create-post-image';
             img.src = `src/admin/uploads/${value}`;
-            if (!div.hasChildNodes()) {
-                div.appendChild(img);
-            } else {
-                div.removeChild(img);
-            }
+            div.appendChild(img);
+
 
 
         }
