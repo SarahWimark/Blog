@@ -13,22 +13,25 @@ if(isset($_SESSION['loggedIn'])) {
 
 <main>
     <div class="container w-25 mt-5 shadow p-4 bg-white rounded">
+        <p class="text-danger"><?php if(!empty($_SESSION['error-msg'])) {echo $_SESSION['error-msg'];}
+        ?></p>
+        <?php if(!empty($_SESSION['error-msg'])) {unset($_SESSION['error-msg']);}?>
         <form action="index.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <input type="text" class="form-control" id="username" name="username">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <input type="password" class="form-control" id="password" name="password">
             </div>
             <div class="form-group">
                 <label for="password">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm" name="confirm" required>
+                <input type="password" class="form-control" id="confirm" name="confirm">
             </div>
             <div class="mt-2">
                 <button type="submit" class="btn btn-secondary" name="register">

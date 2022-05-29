@@ -179,7 +179,7 @@ function updateBlog($title, $description, $imageId, $id) {
     $stmt->close();
 }
 
-function userCredentials($username, $password) {
+function userCredentials($username, $password, $errors) {
     global $conn;
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
         // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
@@ -189,7 +189,6 @@ function userCredentials($username, $password) {
         $stmt->store_result();
         $stmt->bind_result($userId, $pw);
       
-        echo $stmt->num_rows;
         if ($stmt->num_rows == 1) { 
             $stmt->fetch();
             // Account exists, now we verify the password.

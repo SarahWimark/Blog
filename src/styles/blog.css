@@ -253,6 +253,9 @@
   color: #444;
   margin-bottom: 15px;
 }
+.recent {
+  text-align: left;
+}
 
 .recent img {
   height: 60px;

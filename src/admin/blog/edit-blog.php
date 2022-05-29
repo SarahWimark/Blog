@@ -17,8 +17,7 @@ if(isset($_GET['id'])) {
  ?>
 
 <div class="manage-buttons">
-    <a class="btn btn-success" href="src/admin/blog/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back to all
-        blogs</a>
+    <a class="btn btn-success" href="src/admin/blog/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="src/admin/blog/blog.php?id=<?php echo $blog['id']; ?>" method="post" enctype="multipart/form-data">
@@ -34,7 +33,7 @@ if(isset($_GET['id'])) {
         </div>
         <div class="form-group">
             <label for="blogimage" class="mt-2 mb-2">Blog image</label>
-            <select name="blogimage" class="form-control" required>
+            <select id="blogimage" name="blogimage" class="form-control" required onchange="showImage()">
                 <?php
         $images = getUsersImages();
         if(!$images) {
@@ -47,6 +46,24 @@ if(isset($_GET['id'])) {
                 <?php endforeach; ?>
             </select>
         </div>
+        <script type="text/javascript">
+        function showImage() {
+            const div = document.getElementById('image');
+            if (div.hasChildNodes()) {
+                let imgages = div.getElementsByTagName('img');
+                div.removeChild(imgages[0]);
+            }
+            let value = document.getElementById("blogimage").value;
+            const img = document.createElement('img');
+            img.className = 'create-post-image';
+            img.src = `src/admin/uploads/${value}`;
+            div.appendChild(img);
+
+
+
+        }
+        </script>
+        <div id="image" class="imageDiv"></div>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="updateblog">
                 Update blog <i class="fas fa-user-plus"></i></button>

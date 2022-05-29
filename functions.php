@@ -16,7 +16,7 @@ $upload_errors = array(
 );
 
 // Checks the users input and prints a message to the user if credentials are wrong
-function validateUserInput($password, $confirmPW, $username, $email)
+function validateRegisterInput($password, $confirmPW, $username, $email)
 {
     if (empty($username)) {
         $_SESSION['error-msg'] = 'Enter a valid username';
@@ -35,23 +35,8 @@ function validateUserInput($password, $confirmPW, $username, $email)
 
 function validateEmail($email) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $_SESSION['error-msg'] = 'Enter a valid email';
+        $_SESSION['error-msg'] = 'Enter a valid email';
     }
-}
-
-// Get the content of the file with username and passwords
-function getCredentials(): array
-{
-    $lines = explode("\n", file_get_contents('userInfo.txt'));
-    $credentials = array();
-
-    foreach ($lines as $line) {
-        $lineArr = explode(':', $line);
-        $username = $lineArr[0];
-        $password = $lineArr[1];
-        $credentials[$username] = $password;
-    }
-    return $credentials;
 }
 
 // Check if the provided credentials matches the username and
@@ -63,7 +48,6 @@ function checkLogin()
         $password = sanitize($_POST['password']);
     }
    
-    validateUserInput($password,"", $username,"");
     userCredentials($username, $password);
 }
 
@@ -77,12 +61,15 @@ function registerUser()
         $email = sanitize($_POST['email']);
         $confirmPW = sanitize($_POST['confirm']);
     }
-    validateUserInput($password, $confirmPW, $username, $email);
+    validateRegisterInput($password, $confirmPW, $username, $email);
     validateEmail($email);
     $pw_hash = password_hash($password, PASSWORD_DEFAULT);
-    insertNewUser($username, $email, $pw_hash);
-    header("Location: login.php");
-    exit();    
+    if(!$_SESSION['error-msg']) {
+        insertNewUser($username, $email, $pw_hash);
+        header("Location: login.php");
+        exit();    
+    }
+   
 }
 
 
@@ -155,7 +142,7 @@ function addNewImage() {
 } 
 
 function deleteBlog($id){
-    $posts = getUsersPosts();
+    $posts = getUsersPosts($_SESSION['userId']);
     if(!$posts){
         delete('blogs', $id);
     } else {

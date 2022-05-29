@@ -9,7 +9,7 @@ include_once('../../db/db_queries.php');
 if (isset($_POST['newblog'])) {
     addNewBlog();
 } else if (isset($_GET['delete']) && isset($_GET['id'])) {
-    $id = sanitize($_GET['id']);
+    $id = sanitize($_GET['id']); 
     $blog = getById('blogs', $id);
     if($blog['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");

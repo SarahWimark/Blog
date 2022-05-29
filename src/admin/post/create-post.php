@@ -34,7 +34,7 @@ include_once('../../db/db_queries.php');
         </div>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Image</label>
-            <select id="postimage" onchange="showImage()" gename="postimage" class="form-control" required>
+            <select id="postimage" onchange="showImage()" name="postimage" class="form-control" required>
                 <?php
         $images = getUsersImages();
         foreach($images as $image):
