@@ -12,9 +12,15 @@ if(isset($_SESSION['loggedIn'])) {
 ;?>
 
 <main>
+
     <div class="container w-25 mt-5 shadow p-4 bg-white rounded">
-        <p class="text-danger"><?php if(!empty($_SESSION['error-msg'])) {echo $_SESSION['error-msg'];}
-        ?></p>
+        <?php if(!empty($_SESSION['registered-msg'])) { ?>
+        <div class="alert alert-success"><?php echo $_SESSION['registered-msg'];?></div>
+        <?php } ?>
+        <?php if(!empty($_SESSION['registered-msg'])) {unset($_SESSION['registered-msg']);}?>
+        <?php if(!empty($_SESSION['error-msg'])) { ?>
+        <div class="alert alert-danger"><?php echo $_SESSION['error-msg'];?></div>
+        <?php } ?>
         <?php if(!empty($_SESSION['error-msg'])) {unset($_SESSION['error-msg']);}?>
         <form action="index.php" method="post">
             <div class="form-group">

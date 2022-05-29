@@ -179,7 +179,7 @@ function updateBlog($title, $description, $imageId, $id) {
     $stmt->close();
 }
 
-function userCredentials($username, $password, $errors) {
+function userCredentials($username, $password) {
     global $conn;
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
         // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
@@ -206,9 +206,13 @@ function userCredentials($username, $password, $errors) {
                 exit();
             } else {
                 $_SESSION['error-msg'] = "Invalid username or password.";
+                header("location: login.php");
+                exit();
             }
         } else {
             $_SESSION['error-msg'] = "Invalid username or password.";
+            header("location: login.php");
+            exit();
         }
         $stmt->close();
 }

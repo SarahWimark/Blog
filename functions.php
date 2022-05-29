@@ -16,27 +16,23 @@ $upload_errors = array(
 );
 
 // Checks the users input and prints a message to the user if credentials are wrong
-function validateRegisterInput($password, $confirmPW, $username, $email)
+function validateUserInput($password, $confirmPW, $username, $email)
 {
     if (empty($username)) {
-        $_SESSION['error-msg'] = 'Enter a valid username';
+        $_SESSION['error-msg'] = 'Username is required';
     } else if (empty($password)) {
-        $_SESSION['error-msg'] = 'Enter a valid password';
+        $_SESSION['error-msg'] = 'Password is required';
     } else if (strlen($password) < 6) {
         $_SESSION['error-msg'] = 'Password has to be atleast 6 characters long';
     } else if (empty($email)) {
-        $_SESSION['error-msg'] = 'Enter a valid email';
+        $_SESSION['error-msg'] = 'Email is required';
     } else if (strlen($username) < 3) {
         $_SESSION['error-msg'] = 'Användarnamnet måste vara minst 3 tecken långt.';
-    } else if (strcmp($password, $confirmPW == 0)) {
+    } else if ($password != $confirmPW) {
         $_SESSION['error-msg'] = 'Passwords has to match';
-    }
-}
-
-function validateEmail($email) {
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error-msg'] = 'Enter a valid email';
-    }
+    } 
 }
 
 // Check if the provided credentials matches the username and
@@ -61,13 +57,16 @@ function registerUser()
         $email = sanitize($_POST['email']);
         $confirmPW = sanitize($_POST['confirm']);
     }
-    validateRegisterInput($password, $confirmPW, $username, $email);
-    validateEmail($email);
+    validateUserInput($password, $confirmPW, $username, $email);
     $pw_hash = password_hash($password, PASSWORD_DEFAULT);
     if(!$_SESSION['error-msg']) {
         insertNewUser($username, $email, $pw_hash);
+        $_SESSION['registered-msg'] = "You are now a registered user and can login.";
         header("Location: login.php");
         exit();    
+    } else {
+        header("location: signup.php");
+        exit();
     }
    
 }
