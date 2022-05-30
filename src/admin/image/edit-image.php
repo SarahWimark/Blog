@@ -25,7 +25,7 @@ include_once('../../db/db_queries.php');
         <div class="form-group">
             <label for="imagedesc" class="mt-2 mb-2">Image description</label>
             <input type="text" value="<?php echo $image['description']; ?>" class="form-control" id="imagedesc"
-                name="imagedesc">
+                name="imagedesc" required>
         </div>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="updateimage">

@@ -32,6 +32,11 @@ if (isset($_POST['newimage'])) {
 <div class="manage-buttons">
     <a class="btn btn-secondary" href="src/admin/image/upload-image.php"><i class="fas fa-plus"></i> Add new image</a>
 </div>
+<div class="mt-2 alert alert-danger">WARNING - use delete with care! Deleting an image you uploaded will also delete the
+    posts and the blog
+    that
+    the
+    image is used in.</div>
 <table class="table mt-3 table-striped table-hover">
     <thead>
         <tr>

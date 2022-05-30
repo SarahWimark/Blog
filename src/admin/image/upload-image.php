@@ -14,12 +14,12 @@ include_once('../../db/db_queries.php');
     <form action="src/admin/image/image.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="imagedesc" class="mt-2 mb-2">Image description</label>
-            <input type="text" class="form-control" id="imagedesc" name="imagedesc">
+            <input type="text" class="form-control" id="imagedesc" name="imagedesc" required>
         </div>
         <div class="form-group">
             <label for="image" class="mt-3 mb-3">Image: </label>
             <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
-            <input type="file" class="form-control-file" name="image">
+            <input type="file" class="form-control-file" name="image" required>
         </div>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="newimage">
