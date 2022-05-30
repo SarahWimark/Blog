@@ -1,11 +1,3 @@
-<?php 
-session_start();
-if(!isset($_SESSION['loggedIn'])) {
-    header("Location: ../../login.php");
-    exit();  
-}
-?>
-
 <div class="admin-content">
     <div class="admin-sidebar">
         <ul>
@@ -15,3 +7,11 @@ if(!isset($_SESSION['loggedIn'])) {
         </ul>
     </div>
     <div class="admin-dashboard">
+
+        <?php 
+        session_start();
+        if(!isset($_SESSION['loggedIn'])) {
+           header("Location: 403.php");
+           exit();  
+        }
+        ?>

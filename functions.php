@@ -58,6 +58,7 @@ function registerUser()
         $confirmPW = sanitize($_POST['confirm']);
     }
     validateUserInput($password, $confirmPW, $username, $email);
+    checkUserExists($username, $email);
     $pw_hash = password_hash($password, PASSWORD_DEFAULT);
     if(!$_SESSION['error-msg']) {
         insertNewUser($username, $email, $pw_hash);
@@ -124,7 +125,7 @@ function addNewImage() {
     if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {
         $tmp_filename = $_FILES['image']['tmp_name'];
         $upload_dir = "../uploads/";
-        $fileName = basename($_FILES['image']['name']);
+        $fileName = $_SESSION['userId'].basename($_FILES['image']['name']);
 
         if(move_uploaded_file($tmp_filename, $upload_dir . $fileName)) {
             $_SESSION['success_msg'] = "File was sucessfully uploaded";

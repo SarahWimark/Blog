@@ -66,6 +66,26 @@ function insertNewUser($username, $email, $password) {
     $stmt->close();
 }
 
+function checkUserExists($username) {
+    global $conn;
+    $sql = "SELECT * FROM users WHERE username=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $username);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    return $result;  
+}
+
+function checkEmailExists($email) {
+    global $conn;
+    $sql = "SELECT users (username, email, password) VALUES (?,?,?)";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("sss", $username, $email, $password);
+    $stmt->execute();
+    $stmt->close();
+}
+
 function insertNewImage($fileName, $description) {
     global $conn;
     $sql = "INSERT INTO images (filename, description, user_id) VALUES (?,?,?)";
