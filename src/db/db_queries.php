@@ -127,6 +127,15 @@ function getAllBlogs() {
     $stmt->close();
     return $result;
 }
+function getBlogsFromSearchterm() {
+    global $conn;
+    $sql = "SELECT * FROM blogs WHERE title like 'My Fitnessblog'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    return $result;
+}
 
 function getAllPosts() {
     global $conn;

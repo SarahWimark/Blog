@@ -2,7 +2,7 @@
     <div class="all-bloggers-section">
         <h2 class="all-bloggers-section-title">All blogs</h2>
         <?php
-             $blogs = getAllBlogs();
+            $blogs = getAllBlogs();
              foreach($blogs as $blog):
              $image = getById('images', $blog['image_id']);
              $user = getById('users', $blog['user_id']);
@@ -24,12 +24,6 @@
         <?php endforeach; ?>
     </div>
     <aside class="sidebar left">
-        <section class="search">
-            <h2 class="search-title">Search blogs</h2>
-            <form action="">
-                <input type="search" name="searchterm" class="search-input" placeholder="Search...">
-            </form>
-        </section>
         <section class="blog-info">
             <h2 class="blog-title">Newest blogger</h2>
             <hr>

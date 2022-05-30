@@ -61,7 +61,7 @@ function registerUser()
     $pw_hash = password_hash($password, PASSWORD_DEFAULT);
     if(!$_SESSION['error-msg']) {
         insertNewUser($username, $email, $pw_hash);
-        $_SESSION['registered-msg'] = "You are now a registered user and can login.";
+        $_SESSION['success-msg'] = "You are now a registered user and can login.";
         header("Location: login.php");
         exit();    
     } else {
