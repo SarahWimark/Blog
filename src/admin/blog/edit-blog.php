@@ -33,7 +33,7 @@ if(isset($_GET['id'])) {
         </div>
         <div class="form-group">
             <label for="blogimage" class="mt-2 mb-2">Blog image</label>
-            <select id="blogimage" name="blogimage" class="form-control" required onchange="showImage()">
+            <select id="blogimage" name="blogimage" class="form-control" required onchange="showEditImage()">
                 <?php
         $images = getUsersImages();
         if(!$images) {
@@ -47,7 +47,7 @@ if(isset($_GET['id'])) {
             </select>
         </div>
         <script type="text/javascript">
-        function showImage() {
+        function showEditImage() {
             const div = document.getElementById('image');
             if (div.hasChildNodes()) {
                 let imgages = div.getElementsByTagName('img');

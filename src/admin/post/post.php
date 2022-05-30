@@ -36,9 +36,9 @@ if($blog) { ?>
 <div class="manage-buttons">
     <a class="btn btn-secondary" href="src/admin/post/create-post.php"> <i class="fas fa-plus"></i> Create post</a>
 </div>
-<?php } else {
-    echo "Create a blog to start adding posts.";
-} ?>
+<?php } else { ?>
+<p class="error-msg">Create a blog to start adding posts</p>
+<?php } ?>
 <table class="table mt-3 table-striped table-hover">
     <thead>
         <tr>
@@ -52,9 +52,9 @@ if($blog) { ?>
     <tbody>
         <?php
         $posts = getUsersPosts($_SESSION['userId']);
-        if(!$posts) {
-            echo "No posts found";
-        }
+        if(!$posts) { ?>
+        <p class="error-msg">No posts found.</p>
+        <?php }
         foreach($posts as $post):
          $image = getById('images', $post['image_id']);
          $topic = getById('categories', $post['category_id']);

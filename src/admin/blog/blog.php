@@ -32,8 +32,8 @@ if (isset($_POST['newblog'])) {
     }
 }
 $blogs = getUsersBlog($_SESSION['userId']);
-if(!$blogs) {
-    echo "No blog found"; ?>
+if(!$blogs) { ?>
+<p class="error-msg">No blogs found.</p>
 <div class="manage-buttons">
     <a class="btn btn-secondary" href="src/admin/blog/create-blog.php"> <i class="fas fa-plus"></i> Create blog</a>
 </div>

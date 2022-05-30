@@ -145,7 +145,7 @@ function deleteBlog($id){
     if(!$posts){
         delete('blogs', $id);
     } else {
-        echo "Remove all posts that this blog contains first";
+        echo "You have to delete all posts this blog contains to be able to delete it.";
     }
 }
 ?>

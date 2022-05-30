@@ -24,9 +24,6 @@ include_once('../../db/db_queries.php');
             <select id="blogimage" name="blogimage" class="form-control" required onchange="showBlogImage()">
                 <?php
         $images = getUsersImages();
-        if(!$images) {
-            echo "No images found";
-        }
         foreach($images as $image):
         ?>
                 <option value="<?php echo $image['filename']; ?>"><?php echo $image['filename']; ?>
@@ -46,6 +43,7 @@ include_once('../../db/db_queries.php');
             img.className = 'create-post-image';
             img.src = `src/admin/uploads/${value}`;
             div.appendChild(img);
+
 
 
 

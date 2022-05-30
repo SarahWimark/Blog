@@ -44,9 +44,9 @@ if (isset($_POST['newimage'])) {
     <tbody>
         <?php
         $images = getUsersImages();
-        if(!$images) {
-            echo "No images found";
-        }
+        if(!$images) { ?>
+        <p class="error-msg">No images found.</p>
+        <?php } 
         foreach($images as $image):
         ?>
         <tr>
