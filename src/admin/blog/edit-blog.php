@@ -21,6 +21,10 @@ if(isset($_GET['id'])) {
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="src/admin/blog/blog.php?id=<?php echo $blog['id']; ?>" method="post" enctype="multipart/form-data">
+        <?php if(!empty($_SESSION['error-msg'])) { ?>
+        <div class="alert alert-danger"><?php echo $_SESSION['error-msg'];?></div>
+        <?php } ?>
+        <?php if(!empty($_SESSION['error-msg'])) {unset($_SESSION['error-msg']);}?>
         <div class="form-group">
             <label for="blogtitle" class="mt-2 mb-2"> Blog title</label>
             <input type="text" value="<?php echo $blog['title']; ?>" class="form-control" id="blogtitle"

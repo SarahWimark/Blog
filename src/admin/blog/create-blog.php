@@ -10,18 +10,22 @@ include_once('../../db/db_queries.php');
     <a class="btn btn-success" href="src/admin/blog/blog.php"> <i class="fa-solid fa-arrow-left"></i> Go back</a>
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
+    <?php if(!empty($_SESSION['error-msg'])) { ?>
+    <div class="alert alert-danger"><?php echo $_SESSION['error-msg'];?></div>
+    <?php } ?>
+    <?php if(!empty($_SESSION['error-msg'])) {unset($_SESSION['error-msg']);}?>
     <form action="src/admin/blog/blog.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="blogtitle" class="mt-2 mb-2"> Blog title</label>
-            <input type="text" class="form-control" id="blogtitle" name="blogtitle" required>
+            <input type="text" class="form-control" id="blogtitle" name="blogtitle">
         </div>
         <div class="form-group">
             <label for="blogtext" class="mt-2 mb-2">Blog description</label>
-            <textarea class="form-control" maxlength="250" id="blogtext" name="blogtext" required></textarea>
+            <textarea class="form-control" maxlength="250" id="blogtext" name="blogtext"></textarea>
         </div>
         <div class="form-group">
             <label for="blogimage" class="mt-2 mb-2">Blog image</label>
-            <select id="blogimage" name="blogimage" class="form-control" required onchange="showBlogImage()">
+            <select id="blogimage" name="blogimage" class="form-control" onchange="showBlogImage()">
                 <?php
         $images = getUsersImages();
         foreach($images as $image):

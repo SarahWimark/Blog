@@ -79,11 +79,13 @@ function checkUserExists($username) {
 
 function checkEmailExists($email) {
     global $conn;
-    $sql = "SELECT users (username, email, password) VALUES (?,?,?)";
-    $stmt= $conn->prepare($sql);
-    $stmt->bind_param("sss", $username, $email, $password);
+    $sql = "SELECT * FROM users WHERE email=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $email);
     $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
     $stmt->close();
+    return $result;  
 }
 
 function insertNewImage($fileName, $description) {
@@ -141,15 +143,6 @@ function getUsersBlog($id) {
 function getAllBlogs() {
     global $conn;
     $sql = "SELECT * FROM blogs ORDER BY created_at DESC";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-    $stmt->close();
-    return $result;
-}
-function getBlogsFromSearchterm() {
-    global $conn;
-    $sql = "SELECT * FROM blogs WHERE title like 'My Fitnessblog'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);

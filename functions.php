@@ -58,7 +58,12 @@ function registerUser()
         $confirmPW = sanitize($_POST['confirm']);
     }
     validateUserInput($password, $confirmPW, $username, $email);
-    checkUserExists($username, $email);
+    if(checkUserExists($username)){
+        $_SESSION['error-msg'] = "Username already exists.";
+    }
+    if(checkEmailExists($email)) {
+        $_SESSION['error-msg'] = "Email already exists.";
+    }
     $pw_hash = password_hash($password, PASSWORD_DEFAULT);
     if(!$_SESSION['error-msg']) {
         insertNewUser($username, $email, $pw_hash);
@@ -114,9 +119,17 @@ function addNewBlog() {
        $title = sanitize($_POST['blogtitle']);
        $text = sanitize($_POST['blogtext']);
        $image = sanitize($_POST['blogimage']);
-       insertNewBlog($title, $text, $image);    
+       if(getUsersBlog($_SESSION['userId'])) {
+        $_SESSION['error-msg'] = 'Blog already created';
+        header("Location: create-blog.php");
+        exit();   
+       } else {
+       insertNewBlog($title, $text, $image);  
+       }  
        } else {
         $_SESSION['error-msg'] = 'Enter valid credentials';
+        header("Location: create-blog.php");
+        exit();  
        }
 }  
 
@@ -138,6 +151,8 @@ function addNewImage() {
         insertNewImage($fileName, $description);    
         } else {
          $_SESSION['error-msg'] = 'Enter valid credentials';
+         header("Location: upload-image.php");
+         exit();  
     }   
 } 
 

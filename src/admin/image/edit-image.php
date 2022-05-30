@@ -22,10 +22,14 @@ include_once('../../db/db_queries.php');
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="src/admin/image/image.php?id=<?php echo $image['id']; ?>" method="post">
+        <?php if(!empty($_SESSION['error-msg'])) { ?>
+        <div class="alert alert-danger"><?php echo $_SESSION['error-msg'];?></div>
+        <?php } ?>
+        <?php if(!empty($_SESSION['error-msg'])) {unset($_SESSION['error-msg']);}?>
         <div class="form-group">
             <label for="imagedesc" class="mt-2 mb-2">Image description</label>
             <input type="text" value="<?php echo $image['description']; ?>" class="form-control" id="imagedesc"
-                name="imagedesc" required>
+                name="imagedesc">
         </div>
         <div class="mt-4">
             <button type="submit" class="btn btn-secondary right" name="updateimage">

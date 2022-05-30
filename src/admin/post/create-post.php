@@ -12,6 +12,10 @@ include_once('../../db/db_queries.php');
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="src/admin/post/post.php" method="post" enctype="multipart/form-data">
+        <?php if(!empty($_SESSION['error-msg'])) { ?>
+        <div class="alert alert-danger"><?php echo $_SESSION['error-msg'];?></div>
+        <?php } ?>
+        <?php if(!empty($_SESSION['error-msg'])) {unset($_SESSION['error-msg']);}?>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Title</label>
             <input type="text" class="form-control" id="title" name="title" required>

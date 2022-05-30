@@ -26,7 +26,7 @@ if (isset($_POST['newpost'])) {
         header("Location: ../../../index.php");
         exit();  
     } else {
-        updatePost($title, $text, $id);
+        setNewPost($title, $text, $id);
     }
 }
 
