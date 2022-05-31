@@ -1,5 +1,4 @@
 <?php
-
 require('db_connection.php');
 
 session_start();
@@ -238,4 +237,5 @@ function userCredentials($username, $password) {
         }
         $stmt->close();
 }
+
    
