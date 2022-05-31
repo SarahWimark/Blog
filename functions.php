@@ -126,11 +126,11 @@ function addNewBlog() {
        } else {
        insertNewBlog($title, $text, $image);  
        }  
-       } else {
+    } else {
         $_SESSION['error-msg'] = 'Enter valid credentials';
         header("Location: create-blog.php");
         exit();  
-       }
+   }
 }  
 
 
@@ -138,7 +138,7 @@ function addNewImage() {
     if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {
         $tmp_filename = $_FILES['image']['tmp_name'];
         $upload_dir = "../uploads/";
-        $fileName = $_SESSION['userId'].basename($_FILES['image']['name']);
+        $fileName = sanitize($_SESSION['userId'].basename($_FILES['image']['name']));
 
         if(move_uploaded_file($tmp_filename, $upload_dir . $fileName)) {
             $_SESSION['success_msg'] = "File was sucessfully uploaded";

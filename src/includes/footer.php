@@ -21,8 +21,8 @@
         <div class="links">
             <h3>Links</h3>
             <ul>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Terms and conditions</a></li>
+                <li><a href="about.php">About us</a></li>
+                <li><a href="terms.php">Terms and conditions</a></li>
             </ul>
         </div>
         <div class="contact-form">

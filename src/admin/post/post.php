@@ -26,7 +26,8 @@ if (isset($_POST['newpost'])) {
         header("Location: ../../../index.php");
         exit();  
     } else {
-        setNewPost($title, $text, $id);
+        $_SESSION['success-msg'] = "Post was sucessfully updated.";
+        updatePost($title, $text, $id);
     }
 }
 
@@ -39,6 +40,10 @@ if($blog) { ?>
 <?php } else { ?>
 <p class="error-msg">Create a blog to start adding posts</p>
 <?php } ?>
+<?php if(!empty($_SESSION['success-msg'])) { ?>
+<div class="mt-4 alert alert-success"><?php echo $_SESSION['success-msg'];?></div>
+<?php } ?>
+<?php if(!empty($_SESSION['success-msg'])) {unset($_SESSION['success-msg']);}?>
 <table class="table mt-3 table-striped table-hover">
     <thead>
         <tr>

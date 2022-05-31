@@ -7,7 +7,6 @@ include_once('../../db/db_queries.php');
 
 if(isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
     $post = getById('posts', $id);
     if($post['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");
@@ -23,10 +22,6 @@ if(isset($_GET['id'])) {
 </div>
 <div class="clearfix container w-100 mt-5 shadow p-4 bg-white rounded">
     <form action="src/admin/post/post.php?id=<?php echo $post['id']; ?>" method="post">
-        <?php if(!empty($_SESSION['error-msg'])) { ?>
-        <div class="alert alert-danger"><?php echo $_SESSION['error-msg'];?></div>
-        <?php } ?>
-        <?php if(!empty($_SESSION['error-msg'])) {unset($_SESSION['error-msg']);}?>
         <div class="form-group">
             <label for="title" class="mt-2 mb-2">Title</label>
             <input type="text" value="<?php echo $post['title'];?>" class="form-control" id="title" name="title"

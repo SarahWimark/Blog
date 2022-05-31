@@ -7,7 +7,6 @@ include_once('../../db/db_queries.php');
 
  if(isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
-    echo $id;
     $image = getById('images', $id);
     if($image['user_id'] != $_SESSION['userId']) {
         header("Location: ../../../index.php");

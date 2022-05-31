@@ -25,6 +25,7 @@ if (isset($_POST['newimage'])) {
         header("Location: ../../../index.php");
         exit();  
     } else {
+        $_SESSION['success-msg'] = "Image was sucessfully updated.";
         updateImage($id,$description);
     }
 }
@@ -37,6 +38,10 @@ if (isset($_POST['newimage'])) {
     that
     the
     image is used in.</div>
+<?php if(!empty($_SESSION['success-msg'])) { ?>
+<div class="mt-4 alert alert-success"><?php echo $_SESSION['success-msg'];?></div>
+<?php } ?>
+<?php if(!empty($_SESSION['success-msg'])) {unset($_SESSION['success-msg']);}?>
 <table class="table mt-3 table-striped table-hover">
     <thead>
         <tr>

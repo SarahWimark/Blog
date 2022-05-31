@@ -18,7 +18,6 @@ if(isset($_GET['id']) && isset($_GET['all'])) {
     $blog = getUsersBlog($user['id'])[0]; 
     $blogImage = getbyId('images', $blog['image_id']);
 } 
-
 ?>
 
 <main>
@@ -61,6 +60,13 @@ if(isset($_GET['id']) && isset($_GET['all'])) {
         </aside>
 
         <?php
+        if(isset($_GET['all']) && !$posts) { ?>
+        <div class="blog-post-section">
+            <div class="post-content">
+                <h2>This blog has no posts yet.</h2>
+            </div>
+        </div>
+        <?php }
         if(isset($_GET['all'])) {
         foreach($posts as $post):
             $postimage = getById('images', $post['image_id']);
@@ -71,10 +77,13 @@ if(isset($_GET['id']) && isset($_GET['all'])) {
             <div class="post-content">
                 <img src="src/admin/uploads/<?php echo $postimage['filename']; ?>"
                     alt="<?php echo $image['description']; ?>" class="post-image">
+                <p class="mb-2 text-muted"><?php echo $postimage['description']; ?></p>
+                <hr>
                 <p><?php echo $post['text']; ?></p>
             </div>
         </div>
         <?php endforeach; }?>
+
         <?php
         if(isset($_GET['single'])) {
            $postimage = getById('images', $post['image_id']);
@@ -85,6 +94,8 @@ if(isset($_GET['id']) && isset($_GET['all'])) {
             <div class="post-content">
                 <img src="src/admin/uploads/<?php echo $postimage['filename']; ?>"
                     alt="<?php echo $image['description']; ?>" class="post-image">
+                <p class="mb-2 text-muted"><?php echo $postimage['description']; ?></p>
+                <hr>
                 <p><?php echo $post['text']; ?></p>
             </div>
         </div>

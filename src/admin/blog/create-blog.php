@@ -47,10 +47,6 @@ include_once('../../db/db_queries.php');
             img.className = 'create-post-image';
             img.src = `src/admin/uploads/${value}`;
             div.appendChild(img);
-
-
-
-
         }
         </script>
         <div id="image" class="imageDiv"></div>
