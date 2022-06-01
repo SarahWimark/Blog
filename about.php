@@ -1,6 +1,6 @@
 <?php define('TITLE', 'About page'); ?>
-<?php include_once('./src/includes/header.php'); ?>
-
+<?php include_once('path.php'); ?>
+<?php include_once(ROOT_PATH .'/src/includes/header.php'); ?>
 
 <main>
     <div class="about-section paddingTB60 gray-bg">
@@ -43,4 +43,4 @@
         </div>
     </div>
 </main>
-<?php include_once('./src/includes/footer.php'); ?>
+<?php include_once(ROOT_PATH .'/src/includes/footer.php'); ?>

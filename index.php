@@ -1,7 +1,8 @@
 <?php define('TITLE', 'Welcome page'); ?>
-<?php include_once('./src/includes/header.php'); ?>
+<?php include_once('path.php'); ?>
+<?php include_once(ROOT_PATH .'/src/includes/header.php'); ?>
 <?php include_once('functions.php'); ?>
-<?php include_once('src/db/db_queries.php'); ?>
+<?php include_once(ROOT_PATH .'/src/db/db_queries.php'); ?>
 
 <?php
  if(!isset($_SESSION)) 
@@ -20,7 +21,7 @@ if (isset($_POST['register'])) {
 ?>
 
 <main>
-    <?php include_once('./src/blog/includes/carousel.php'); ?>
+    <?php include_once(ROOT_PATH .'/src/blog/includes/carousel.php'); ?>
     <?php include_once('./src/blog/includes/main.php'); ?>
 </main>
-<?php include_once('./src/includes/footer.php'); ?>
+<?php include_once(ROOT_PATH .'/src/includes/footer.php'); ?>

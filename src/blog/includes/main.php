@@ -1,3 +1,5 @@
+<?php include('path.php'); ?>
+
 <div class="content clearfix">
     <div class="all-bloggers-section">
         <h2 class="all-bloggers-section-title">All blogs</h2>

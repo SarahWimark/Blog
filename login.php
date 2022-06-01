@@ -1,5 +1,6 @@
 <?php define('TITLE', 'Login'); ?>
-<?php include_once('./src/includes/header.php'); ?>
+<?php include_once('path.php'); ?>
+<?php include_once(ROOT_PATH .'/src/includes/header.php'); ?>
 
 <?php
 
@@ -44,4 +45,4 @@ if(isset($_SESSION['loggedIn'])) {
     </div>
 </main>
 
-<?php include_once('./src/includes/footer.php'); ?>
+<?php include_once(ROOT_PATH .'/src/includes/footer.php'); ?>
