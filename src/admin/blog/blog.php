@@ -1,8 +1,9 @@
 <?php define('TITLE', 'Admin blog'); 
-include_once('src/includes/header.php'); 
-include_once('../dashboard.php');
-include_once('../../../functions.php');
-include_once('../../db/db_queries.php');
+include_once(dirname(__FILE__,4) .'/src/includes/header.php'); 
+include_once(dirname(__FILE__,4) .'/src/admin/dashboard.php');
+include_once(dirname(__FILE__,4) .'/functions.php');
+include_once(dirname(__FILE__,4) .'/src/db/db_queries.php');
+
 ?>
 
 <?php

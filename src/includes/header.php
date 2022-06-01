@@ -2,7 +2,7 @@
     if(!isset($_SESSION)) 
     { 
         session_start(); 
-    }
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap"
         rel="stylesheet">
+    <!--   <base href="http://localhost/Projekt/blog/" /> -->
+    <base href="http://www.student.ltu.se/~sarvim-4/Projekt/Blog/" />
     <link rel="stylesheet" href="src/styles/header.css">
     <link rel="stylesheet" href="src/styles/footer.css">
     <link rel="stylesheet" href="src/styles/blog.css">

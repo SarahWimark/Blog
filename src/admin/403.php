@@ -1,5 +1,5 @@
 <?php define('TITLE', 'Access denied'); 
-include_once('../includes/header.php'); 
+include_once(dirname(__FILE__,3) .'/src/includes/header.php'); 
 ?>
 
 <div class="mt-4 container m-auto">

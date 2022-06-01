@@ -1,18 +1,20 @@
 <?php define('TITLE', 'Admin posts'); 
-include_once('src/includes/header.php'); 
-include_once('../dashboard.php');
-include_once('../../../functions.php');
-include_once('../../db/db_queries.php');
+include_once(dirname(__FILE__,4) .'/src/includes/header.php'); 
+include_once(dirname(__FILE__,4) .'/src/admin/dashboard.php');
+include_once(dirname(__FILE__,4) .'/functions.php');
+include_once(dirname(__FILE__,4) .'/src/db/db_queries.php');
 ?>
 
 <?php
+
 if (isset($_POST['newpost'])) { 
     addNewPost();
 } else if (isset($_GET['delete']) && isset($_GET['id'])) {
     $id = sanitize($_GET['id']);
     $post = getById('posts', $id);
     if($post['user_id'] != $_SESSION['userId']) {
-        header("Location: ../../../index.php");
+        $path = dirname(__FILE__, 1);
+        header("Location:  $path/403.php");
         exit();  
     } else {
         delete('posts', $id);
@@ -23,7 +25,8 @@ if (isset($_POST['newpost'])) {
     $text = sanitize($_POST['text']);
     $post = getById('posts', $id);
     if($post['user_id'] != $_SESSION['userId']) {
-        header("Location: ../../../index.php");
+        $path = dirname(__FILE__, 1);
+        header("Location:  $path/403.php");
         exit();  
     } else {
         $_SESSION['success-msg'] = "Post was sucessfully updated.";
