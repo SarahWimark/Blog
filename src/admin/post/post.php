@@ -1,5 +1,5 @@
 <?php define('TITLE', 'Admin posts'); 
-include_once('../../includes/header.php'); 
+include_once('src/includes/header.php'); 
 include_once('../dashboard.php');
 include_once('../../../functions.php');
 include_once('../../db/db_queries.php');

@@ -150,51 +150,6 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-.search-title {
-  color: #444;
-  margin-bottom: 15px;
-}
-
-.search-input {
-  width: 80%;
-  border-radius: 6px;
-  outline: none;
-  font-size: 1.2rem;
-  border: 1px solid lightgray;
-  display: block;
-  padding: 0.6rem 1rem;
-  color: #444;
-  line-height: 1.5rem;
-}
-
-.categories-title {
-  color: #444;
-  margin-bottom: 15px;
-}
-
-.categories ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-}
-
-.categories ul li {
-  width: 80%;
-  border-top: 1px solid lightgrey;
-  transition: all 0.4s;
-}
-
-.categories ul li a {
-  display: block;
-  padding: 15px 0;
-  color: #444;
-}
-
-.categories ul li:hover {
-  padding-left: 10px;
-  transition: all 0.4s;
-}
-
 .blogger-name {
   font-size: 1.2rem;
   text-align: center;
@@ -225,6 +180,11 @@
   float: left;
   border-radius: 6px;
   margin-bottom: 20px;
+}
+
+.post-p {
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .post-sidebar {

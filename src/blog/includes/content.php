@@ -70,10 +70,14 @@ if(isset($_GET['id']) && isset($_GET['all'])) {
         if(isset($_GET['all'])) {
         foreach($posts as $post):
             $postimage = getById('images', $post['image_id']);
+            $date = strtotime($post['created_at']);
+            $newDate = date('m/d/y - G:i', $date);
         ?>
 
         <div class="blog-post-section">
             <h2 class="post-title"><?php echo $post['title']; ?></h2>
+            <p class="text-muted post-p">
+                <?php echo $newDate; ?></p>
             <div class="post-content">
                 <img src="src/admin/uploads/<?php echo $postimage['filename']; ?>"
                     alt="<?php echo $image['description']; ?>" class="post-image">
@@ -87,10 +91,14 @@ if(isset($_GET['id']) && isset($_GET['all'])) {
         <?php
         if(isset($_GET['single'])) {
            $postimage = getById('images', $post['image_id']);
+           $date = strtotime($post['created_at']);
+           $newDate = date('m/d/y - G:i', $date);
         ?>
 
         <div class="blog-post-section">
             <h2 class="post-title"><?php echo $post['title']; ?></h2>
+            <p class="text-muted post-p">
+                <?php echo $newDate; ?></p>
             <div class="post-content">
                 <img src="src/admin/uploads/<?php echo $postimage['filename']; ?>"
                     alt="<?php echo $image['description']; ?>" class="post-image">

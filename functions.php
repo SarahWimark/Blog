@@ -1,7 +1,10 @@
 <?php
-include_once("./src/db/db_queries.php");
+include_once("src/db/db_queries.php");
 // create session
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 $upload_errors = array(
     // http://www.php.net/manual/en/features.file-upload.errors.php

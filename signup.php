@@ -3,7 +3,10 @@
 
 <?php
 
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 // If there is an active session redirect user to index page
 if(isset($_SESSION['loggedIn'])) {
     header("Location: index.php");

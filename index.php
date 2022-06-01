@@ -4,7 +4,10 @@
 <?php include_once('src/db/db_queries.php'); ?>
 
 <?php
- session_start();
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
 
 // Checks what button that was pressed and calls the approriate function
 if (isset($_POST['register'])) {

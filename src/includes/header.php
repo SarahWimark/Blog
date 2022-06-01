@@ -1,5 +1,8 @@
 <?php 
-  session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +18,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap"
         rel="stylesheet">
-    <base href="http://localhost/Projekt/blog/" />
-    <script src="src/js/script.js" defer></script>
     <link rel="stylesheet" href="src/styles/header.css">
     <link rel="stylesheet" href="src/styles/footer.css">
     <link rel="stylesheet" href="src/styles/blog.css">
@@ -35,14 +36,14 @@
                 <ul class="navigation">
                     <li><a href="index.php">Home</a></li>
                     <?php
-                    if(!$_SESSION['loggedIn']){
+                    if(!isset($_SESSION['loggedIn'])){
                     ?>
                     <li><a href="signup.php">Sign up</a></li>
                     <li><a href="login.php">Login</a></li>
                     <?php
                     } ?>
                     <?php
-                    if($_SESSION['username']){
+                    if(isset($_SESSION['username'])){
                     ?>
                     <li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?> <i
                                 class="fa fa-chevron-down"></i></a>

@@ -1,7 +1,10 @@
 <?php
 require('db_connection.php');
 
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 function getAllFromTable($table) {
     global $conn;
