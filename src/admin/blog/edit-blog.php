@@ -77,4 +77,4 @@ if(isset($_GET['id'])) {
 
 </div>
 </div>
-<?php include_once('../../includes/footer-small.php');
+<?php include_once(dirname(__FILE__, 4) .'/src/includes/footer-small.php'); ?>

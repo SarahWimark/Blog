@@ -39,7 +39,7 @@ function validateUserInput($password, $confirmPW, $username, $email)
 }
 
 // Check if the provided credentials matches the username and
-// password saved in the file and if a match logs in the user
+// password saved in the database and if a match logs in the user
 function checkLogin()
 {
     if (isset($_POST['username']) && isset($_POST['password'])) {
@@ -100,11 +100,13 @@ function sanitize($data){
     return $data;
 }
 
+// Get the topics from the database
 function getCategories() {
     $allCategories = getAllFromTable('categories');
     return $allCategories;
 }
 
+// Add a new post to the database
 function addNewPost() {
     if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['posttopic']) && isset($_POST['postimage'])) {
        $title = sanitize($_POST['title']);
@@ -117,6 +119,7 @@ function addNewPost() {
        }
 }  
 
+// Add a new blog to the database
 function addNewBlog() {
     if (isset($_POST['blogtitle']) && isset($_POST['blogtext']) && isset($_POST['blogimage'])) {
        $title = sanitize($_POST['blogtitle']);
@@ -136,7 +139,7 @@ function addNewBlog() {
    }
 }  
 
-
+// Add a new image to the database
 function addNewImage() {
     if (isset($_POST['imagedesc']) && $_FILES['image']['size'] > 0) {
         $tmp_filename = $_FILES['image']['tmp_name'];
@@ -159,6 +162,7 @@ function addNewImage() {
     }   
 } 
 
+// Delete the blog if the user has no posts
 function deleteBlog($id){
     $posts = getUsersPosts($_SESSION['userId']);
     if(!$posts){

@@ -4,6 +4,7 @@ include_once('../../includes/header.php');
 include_once('../../../functions.php'); 
 include_once('../../db/db_queries.php'); 
 
+// Checks if queryparameter id is set and if it´s a single blogpost or all blogposts to be shown
 if(isset($_GET['id']) && isset($_GET['all'])) {
     $id = sanitize($_GET['id']);
     $blog = getById('blogs', $id);
@@ -108,10 +109,6 @@ if(isset($_GET['id']) && isset($_GET['all'])) {
             </div>
         </div>
         <?php } ?>
-
-
-
-
     </div>
 </main>
 <?php include_once('../../includes/footer.php'); ?>

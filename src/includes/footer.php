@@ -27,8 +27,8 @@
         </div>
         <div class="contact-form">
             <h3>Contact us</h3>
-            <form action="">
-                <input type="email" name="email" id="email" class="contact-form-input"
+            <form action="#">
+                <input type="email" name="email" id="contactemail" class="contact-form-input"
                     placeholder="Enter your email...">
                 <textarea name="message" id="message" rows="5" class="contact-form-input"
                     placeholder="Enter your message..."></textarea>
@@ -47,7 +47,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="src/js/carousel.js"></script>
 </body>
 

@@ -6,7 +6,7 @@ include_once(dirname(__FILE__,4) .'/src/db/db_queries.php');
 ?>
 
 <?php
-
+// Checks what button was pressed and calls the appropriate function and that you cant update or delete another users material
 if (isset($_POST['newpost'])) { 
     addNewPost();
 } else if (isset($_GET['delete']) && isset($_GET['id'])) {
@@ -69,7 +69,8 @@ if($blog) { ?>
         ?>
         <tr>
             <td><img src="src/admin/uploads/<?php echo $image['filename']; ?>" class="avatar" alt="Avatar"></td>
-            <td><a href="src/blog/includes/content.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a>
+            <td><a
+                    href="src/blog/includes/content.php?id=<?php echo $post['id']; ?>&single=true"><?php echo $post['title']; ?></a>
             </td>
             <td><?php echo $topic['category_name']; ?></td>
             <td><?php echo $post['created_at']; ?></td>
@@ -86,4 +87,4 @@ if($blog) { ?>
 </div>
 </div>
 
-<?php include_once('../../includes/footer-small.php');
+<?php include_once(dirname(__FILE__, 4) .'/src/includes/footer-small.php'); ?>

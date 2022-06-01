@@ -7,6 +7,7 @@ include_once(dirname(__FILE__,4) .'/src/db/db_queries.php');
 ?>
 
 <?php
+// Checks what button was pressed and calls the appropriate function and that you cant update or delete another users material
 if (isset($_POST['newimage'])) {
   addNewImage();
 } else if (isset($_GET['delete']) && isset($_GET['id'])) {
@@ -79,4 +80,4 @@ if (isset($_POST['newimage'])) {
 </div>
 </div>
 
-<?php include_once('../../includes/footer-small.php');
+<?php include_once(dirname(__FILE__, 4) .'/src/includes/footer-small.php'); ?>

@@ -205,7 +205,7 @@ function updateBlog($title, $description, $imageId, $id) {
 function userCredentials($username, $password) {
     global $conn;
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
-        // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
+        // Bind parameters (s = string, i = int, b = blob, etc), the username is a string so we use "s"
         $stmt->bind_param('s', $username);
         $stmt->execute();
         // Store the result so we can check if the account exists in the database.
@@ -214,11 +214,9 @@ function userCredentials($username, $password) {
       
         if ($stmt->num_rows == 1) { 
             $stmt->fetch();
-            // Account exists, now we verify the password.
-            // Note: remember to use password_hash in your registration file to store the hashed passwords.
+            // Account exists so we verify the password.
             if (password_verify($password, $pw)) {
-                // Verification success! User has logged-in!
-                // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
+                // Create sessions, so we know the user is logged in
                 // Store data in session variables
                 $_SESSION["loggedIn"] = true;
                 $_SESSION["userId"] = $userId;

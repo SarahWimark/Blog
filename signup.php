@@ -1,6 +1,5 @@
 <?php define('TITLE', 'Sign up'); ?>
-<?php include_once('path.php'); ?>
-<?php include_once(ROOT_PATH .'/src/includes/header.php'); ?>
+<?php include_once('src/includes/header.php'); ?>
 
 <?php
 
@@ -35,7 +34,7 @@ if(isset($_SESSION['loggedIn'])) {
                 <input type="password" class="form-control" id="password" name="password">
             </div>
             <div class="form-group">
-                <label for="password">Confirm Password</label>
+                <label for="confirm">Confirm Password</label>
                 <input type="password" class="form-control" id="confirm" name="confirm">
             </div>
             <div class="mt-2">
@@ -47,4 +46,4 @@ if(isset($_SESSION['loggedIn'])) {
     </div>
 </main>
 
-<?php include_once(ROOT_PATH .'/src/includes/footer.php'); ?>
+<?php include_once('src/includes/footer.php'); ?>

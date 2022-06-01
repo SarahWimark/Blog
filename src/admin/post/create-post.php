@@ -60,9 +60,6 @@ include_once(dirname(__FILE__,4) .'/src/db/db_queries.php');
             img.className = 'create-post-image';
             img.src = `src/admin/uploads/${value}`;
             div.appendChild(img);
-
-
-
         }
         </script>
         <div id="image" class="imageDiv"></div>
@@ -75,4 +72,4 @@ include_once(dirname(__FILE__,4) .'/src/db/db_queries.php');
 
 </div>
 </div>
-<?php include_once('../../includes/footer-small.php');
+<?php include_once(dirname(__FILE__, 4) .'/src/includes/footer-small.php'); ?>
