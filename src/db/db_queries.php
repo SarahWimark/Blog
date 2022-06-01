@@ -34,7 +34,6 @@ function delete($table, $id) {
     $stmt->bind_param('i', $id);
     $stmt->execute();
     $stmt->close();
-    return $result;
 }
 
 function getImageId($filename) {
